@@ -1,6 +1,6 @@
 /*
  * File:   mains1.c
- * Author: camila
+ * Author: camila 
  *
  * Created on February 23, 2021, 12:08 PM
  */
