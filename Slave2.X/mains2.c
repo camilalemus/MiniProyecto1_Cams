@@ -30,16 +30,12 @@
 
 #include <xc.h>
 #include <stdint.h>
-#include "ADC.h"
 
 //******************************************************************************
 //                                  VARIABLES
 //******************************************************************************
 
 #define _XTAL_FREQ (8000000)
-
-uint8_t ADC_cflag;
-uint8_t ADC_analogvalue;
 
 //******************************************************************************
 //                           INSTANCIAR FUNCIONES
@@ -53,16 +49,7 @@ void setup(void);
 
 void main(void) {
     setup();
-    ADC_init(1, 2, 0, 1);
-    //    ADCON0bits.GO = 1;
-    ADC_cflag = 1;
     while (1) {
-        PORTC = ADC_analogvalue;
-        if (ADC_cflag == 1) { // When the value is copied on my display
-            __delay_us(500); // Wait the required acquisition time
-            ADC_cflag = 0; // Turn off the adc_c flag
-            ADCON0bits.GO = 1; // Start ADC Convertion
-        }
     }
 }
 
@@ -105,3 +92,15 @@ void setup(){
 //******************************************************************************
 //                          INTERRUPCIONES
 //******************************************************************************
+
+void __interrupt() isr(void) {
+    if (INTCONbits.RBIF == 1) {
+        if (PORTBbits.RB0 == 1) { //If the push button is pressed down, add to the Debounce Counter
+            PORTD--;
+        } 
+        else if (PORTBbits.RB1 == 1) {
+            PORTD++;
+        }
+        INTCONbits.RBIF = 0; //Turn off the interrupt flag
+    }
+}
