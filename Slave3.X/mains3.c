@@ -37,6 +37,10 @@
 //******************************************************************************
 
 #define _XTAL_FREQ (8000000)
+#define RED RD0
+#define YELLOW RD1
+#define GREEN RD2
+
 
 uint8_t ADC_cflag;
 uint8_t ADC_analogvalue;
@@ -46,6 +50,7 @@ uint8_t ADC_analogvalue;
 //******************************************************************************
 
 void setup(void);
+void thermometer(void);
 
 //******************************************************************************
 //                              CICLO PRINCIPAL
@@ -53,16 +58,17 @@ void setup(void);
 
 void main(void) {
     setup();
-    ADC_init(1, 2, 0, 1);
+    ADC_init(1, 0, 0, 4);
     //    ADCON0bits.GO = 1;
     ADC_cflag = 1;
     while (1) {
-        PORTC = ADC_analogvalue;
+//        PORTAbits.RA0 = ADC_analogvalue;
         if (ADC_cflag == 1) { // When the value is copied on my display
             __delay_us(500); // Wait the required acquisition time
             ADC_cflag = 0; // Turn off the adc_c flag
             ADCON0bits.GO = 1; // Start ADC Convertion
         }
+        thermometer();
     }
 }
 
@@ -74,25 +80,18 @@ void setup(){
         
     ANSEL = 0;
     ANSELH = 0;
-    ANSELbits.ANS2 = 1;
+    ANSELbits.ANS0 = 1;
     
     INTCONbits.GIE = 1;             //Set Global interrupts enable
     TMR0 = 0;                       //Set Timer0 start point
     TRISA = 0;
-    TRISAbits.TRISA2 = 1;
+    TRISAbits.TRISA0 = 1;
     TRISC = 0;                      //Port C and B are outputs
     TRISD = 0;
     TRISB = 0;
     PORTC = 0;                      // Turn off display and LEDs
     PORTD = 0;
-    TRISBbits.TRISB1 = 1;           //Inputs B0 and B1 because of push buttons
-    TRISBbits.TRISB0 = 1;
     INTCONbits.PEIE = 1;            //Periferal Enable
-    INTCONbits.RBIE = 1;            //Interrupts on change
-    IOCBbits.IOCB0 = 1;             //Pines
-    IOCBbits.IOCB1 = 1;
-    INTCONbits.RBIF = 0;
-    
     PIR1bits.ADIF = 0; //ADC interrupt flag cleared
     PIE1bits.ADIE = 1; //ADC interrupt enable ON
     ADCON0bits.ADON = 1; //ADC Enable bit
@@ -102,8 +101,24 @@ void setup(){
 //                                  FUNCIONES
 //******************************************************************************
 
+//The 0 value is 68, so using a rule of 3
+
 void thermometer(){
-    
+    if (ADC_analogvalue < 99){
+        RED = 0;
+        YELLOW = 0;
+        GREEN = 1;
+        }
+    else if ((113 > ADC_analogvalue) & (ADC_analogvalue > 99)){
+        RED = 0;
+        YELLOW = 1;
+        GREEN = 0;
+        }
+    else if (ADC_analogvalue > 113){
+        RED = 1;
+        YELLOW = 0;
+        GREEN = 0;
+    }            
 }
 
 //******************************************************************************
