@@ -53,7 +53,7 @@ void setup(void);
 
 void main(void) {
     setup();
-    ADC_init(1, 2, 0, 1);
+    ADC_init(1, 0, 0, 1);
     //    ADCON0bits.GO = 1;
     ADC_cflag = 1;
     while (1) {
@@ -74,12 +74,12 @@ void setup(){
         
     ANSEL = 0;
     ANSELH = 0;
-    ANSELbits.ANS2 = 1;
+    ANSELbits.ANS0 = 1;
     
     INTCONbits.GIE = 1;             //Set Global interrupts enable
     TMR0 = 0;                       //Set Timer0 start point
     TRISA = 0;
-    TRISAbits.TRISA2 = 1;
+    TRISAbits.TRISA0 = 1;
     TRISC = 0;                      //Port C and B are outputs
     TRISD = 0;
     TRISB = 0;
