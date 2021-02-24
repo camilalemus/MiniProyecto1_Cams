@@ -1,7 +1,7 @@
 Version 4.0 HI-TECH Software Intermediate Code
 [p mainexit ]
-"52 mains3.c
-[; ;mains3.c: 52: void setup(void);
+"53 mains3.c
+[; ;mains3.c: 53: void setup(void);
 [v _setup `(v ~T0 @X0 0 ef ]
 "26 ./ADC.h
 [; ;./ADC.h: 26: void ADC_init(uint8_t ADCSbit,uint8_t Channel, uint8_t Justified, uint8_t Vref);
@@ -33,8 +33,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 "1276
 [; ;C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f887.h: 1276: extern volatile ADCON0bits_t ADCON0bits __attribute__((address(0x01F)));
 [v _ADCON0bits `VS44 ~T0 @X0 0 e@31 ]
-"53 mains3.c
-[; ;mains3.c: 53: void thermometer(void);
+"54 mains3.c
+[; ;mains3.c: 54: void thermometer(void);
 [v _thermometer `(v ~T0 @X0 0 ef ]
 "3387 C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f887.h
 [; ;C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f887.h: 3387: extern volatile unsigned char ANSEL __attribute__((address(0x188)));
@@ -394,210 +394,210 @@ Version 4.0 HI-TECH Software Intermediate Code
 "3546
 [; ;C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f887.h: 3546: __asm("EECON2 equ 018Dh");
 [; <" EECON2 equ 018Dh ;# ">
-"45 mains3.c
-[; ;mains3.c: 45: uint8_t ADC_cflag;
+"46 mains3.c
+[; ;mains3.c: 46: uint8_t ADC_cflag;
 [v _ADC_cflag `uc ~T0 @X0 1 e ]
-"46
-[; ;mains3.c: 46: uint8_t ADC_analogvalue;
+"47
+[; ;mains3.c: 47: uint8_t ADC_analogvalue;
 [v _ADC_analogvalue `uc ~T0 @X0 1 e ]
 [v $root$_main `(v ~T0 @X0 0 e ]
-"59
-[; ;mains3.c: 59: void main(void) {
+"60
+[; ;mains3.c: 60: void main(void) {
 [v _main `(v ~T0 @X0 1 ef ]
 {
 [e :U _main ]
 [f ]
-"60
-[; ;mains3.c: 60:     setup();
-[e ( _setup ..  ]
 "61
-[; ;mains3.c: 61:     ADC_init(1, 0, 0, 4);
+[; ;mains3.c: 61:     setup();
+[e ( _setup ..  ]
+"62
+[; ;mains3.c: 62:     ADC_init(1, 0, 0, 4);
 [e ( _ADC_init (4 , , , -> -> 1 `i `uc -> -> 0 `i `uc -> -> 0 `i `uc -> -> 4 `i `uc ]
-"63
-[; ;mains3.c: 63:     ADC_cflag = 1;
-[e = _ADC_cflag -> -> 1 `i `uc ]
 "64
-[; ;mains3.c: 64:     while (1) {
+[; ;mains3.c: 64:     ADC_cflag = 1;
+[e = _ADC_cflag -> -> 1 `i `uc ]
+"65
+[; ;mains3.c: 65:     while (1) {
 [e :U 140 ]
 {
-"66
-[; ;mains3.c: 66:         if (ADC_cflag == 1) {
+"67
+[; ;mains3.c: 67:         if (ADC_cflag == 1) {
 [e $ ! == -> _ADC_cflag `i -> 1 `i 142  ]
 {
-"67
-[; ;mains3.c: 67:             _delay((unsigned long)((500)*((8000000)/4000000.0)));
-[e ( __delay (1 -> * -> -> 500 `i `d / -> -> 8000000 `l `d .4000000.0 `ul ]
 "68
-[; ;mains3.c: 68:             ADC_cflag = 0;
-[e = _ADC_cflag -> -> 0 `i `uc ]
+[; ;mains3.c: 68:             _delay((unsigned long)((500)*((8000000)/4000000.0)));
+[e ( __delay (1 -> * -> -> 500 `i `d / -> -> 8000000 `l `d .4000000.0 `ul ]
 "69
-[; ;mains3.c: 69:             ADCON0bits.GO = 1;
-[e = . . _ADCON0bits 1 1 -> -> 1 `i `uc ]
+[; ;mains3.c: 69:             ADC_cflag = 0;
+[e = _ADC_cflag -> -> 0 `i `uc ]
 "70
-[; ;mains3.c: 70:         }
+[; ;mains3.c: 70:             ADCON0bits.GO = 1;
+[e = . . _ADCON0bits 1 1 -> -> 1 `i `uc ]
+"71
+[; ;mains3.c: 71:         }
 }
 [e :U 142 ]
-"71
-[; ;mains3.c: 71:         thermometer();
-[e ( _thermometer ..  ]
 "72
-[; ;mains3.c: 72:     }
+[; ;mains3.c: 72:         thermometer();
+[e ( _thermometer ..  ]
+"73
+[; ;mains3.c: 73:     }
 }
 [e :U 139 ]
 [e $U 140  ]
 [e :U 141 ]
-"73
-[; ;mains3.c: 73: }
+"74
+[; ;mains3.c: 74: }
 [e :UE 138 ]
 }
-"79
-[; ;mains3.c: 79: void setup(){
+"80
+[; ;mains3.c: 80: void setup(){
 [v _setup `(v ~T0 @X0 1 ef ]
 {
 [e :U _setup ]
 [f ]
-"81
-[; ;mains3.c: 81:     ANSEL = 0;
-[e = _ANSEL -> -> 0 `i `uc ]
 "82
-[; ;mains3.c: 82:     ANSELH = 0;
-[e = _ANSELH -> -> 0 `i `uc ]
+[; ;mains3.c: 82:     ANSEL = 0;
+[e = _ANSEL -> -> 0 `i `uc ]
 "83
-[; ;mains3.c: 83:     ANSELbits.ANS0 = 1;
+[; ;mains3.c: 83:     ANSELH = 0;
+[e = _ANSELH -> -> 0 `i `uc ]
+"84
+[; ;mains3.c: 84:     ANSELbits.ANS0 = 1;
 [e = . . _ANSELbits 0 0 -> -> 1 `i `uc ]
-"85
-[; ;mains3.c: 85:     INTCONbits.GIE = 1;
-[e = . . _INTCONbits 0 7 -> -> 1 `i `uc ]
 "86
-[; ;mains3.c: 86:     TMR0 = 0;
-[e = _TMR0 -> -> 0 `i `uc ]
+[; ;mains3.c: 86:     INTCONbits.GIE = 1;
+[e = . . _INTCONbits 0 7 -> -> 1 `i `uc ]
 "87
-[; ;mains3.c: 87:     TRISA = 0;
-[e = _TRISA -> -> 0 `i `uc ]
+[; ;mains3.c: 87:     TMR0 = 0;
+[e = _TMR0 -> -> 0 `i `uc ]
 "88
-[; ;mains3.c: 88:     TRISAbits.TRISA0 = 1;
-[e = . . _TRISAbits 0 0 -> -> 1 `i `uc ]
+[; ;mains3.c: 88:     TRISA = 0;
+[e = _TRISA -> -> 0 `i `uc ]
 "89
-[; ;mains3.c: 89:     TRISC = 0;
-[e = _TRISC -> -> 0 `i `uc ]
+[; ;mains3.c: 89:     TRISAbits.TRISA0 = 1;
+[e = . . _TRISAbits 0 0 -> -> 1 `i `uc ]
 "90
-[; ;mains3.c: 90:     TRISD = 0;
-[e = _TRISD -> -> 0 `i `uc ]
+[; ;mains3.c: 90:     TRISC = 0;
+[e = _TRISC -> -> 0 `i `uc ]
 "91
-[; ;mains3.c: 91:     TRISB = 0;
-[e = _TRISB -> -> 0 `i `uc ]
+[; ;mains3.c: 91:     TRISD = 0;
+[e = _TRISD -> -> 0 `i `uc ]
 "92
-[; ;mains3.c: 92:     PORTC = 0;
-[e = _PORTC -> -> 0 `i `uc ]
+[; ;mains3.c: 92:     TRISB = 0;
+[e = _TRISB -> -> 0 `i `uc ]
 "93
-[; ;mains3.c: 93:     PORTD = 0;
-[e = _PORTD -> -> 0 `i `uc ]
+[; ;mains3.c: 93:     PORTC = 0;
+[e = _PORTC -> -> 0 `i `uc ]
 "94
-[; ;mains3.c: 94:     INTCONbits.PEIE = 1;
-[e = . . _INTCONbits 0 6 -> -> 1 `i `uc ]
+[; ;mains3.c: 94:     PORTD = 0;
+[e = _PORTD -> -> 0 `i `uc ]
 "95
-[; ;mains3.c: 95:     PIR1bits.ADIF = 0;
-[e = . . _PIR1bits 0 6 -> -> 0 `i `uc ]
+[; ;mains3.c: 95:     INTCONbits.PEIE = 1;
+[e = . . _INTCONbits 0 6 -> -> 1 `i `uc ]
 "96
-[; ;mains3.c: 96:     PIE1bits.ADIE = 1;
-[e = . . _PIE1bits 0 6 -> -> 1 `i `uc ]
+[; ;mains3.c: 96:     PIR1bits.ADIF = 0;
+[e = . . _PIR1bits 0 6 -> -> 0 `i `uc ]
 "97
-[; ;mains3.c: 97:     ADCON0bits.ADON = 1;
-[e = . . _ADCON0bits 0 0 -> -> 1 `i `uc ]
+[; ;mains3.c: 97:     PIE1bits.ADIE = 1;
+[e = . . _PIE1bits 0 6 -> -> 1 `i `uc ]
 "98
-[; ;mains3.c: 98: }
+[; ;mains3.c: 98:     ADCON0bits.ADON = 1;
+[e = . . _ADCON0bits 0 0 -> -> 1 `i `uc ]
+"99
+[; ;mains3.c: 99: }
 [e :UE 143 ]
 }
-"106
-[; ;mains3.c: 106: void thermometer(){
+"107
+[; ;mains3.c: 107: void thermometer(){
 [v _thermometer `(v ~T0 @X0 1 ef ]
 {
 [e :U _thermometer ]
 [f ]
-"107
-[; ;mains3.c: 107:     if (ADC_analogvalue < 99){
+"108
+[; ;mains3.c: 108:     if (ADC_analogvalue < 99){
 [e $ ! < -> _ADC_analogvalue `i -> 99 `i 145  ]
 {
-"108
-[; ;mains3.c: 108:         RD0 = 0;
-[e = _RD0 -> -> 0 `i `b ]
 "109
-[; ;mains3.c: 109:         RD1 = 0;
-[e = _RD1 -> -> 0 `i `b ]
+[; ;mains3.c: 109:         RD0 = 0;
+[e = _RD0 -> -> 0 `i `b ]
 "110
-[; ;mains3.c: 110:         RD2 = 1;
-[e = _RD2 -> -> 1 `i `b ]
+[; ;mains3.c: 110:         RD1 = 0;
+[e = _RD1 -> -> 0 `i `b ]
 "111
-[; ;mains3.c: 111:         }
+[; ;mains3.c: 111:         RD2 = 1;
+[e = _RD2 -> -> 1 `i `b ]
+"112
+[; ;mains3.c: 112:         }
 }
 [e $U 146  ]
-"112
-[; ;mains3.c: 112:     else if ((113 > ADC_analogvalue) & (ADC_analogvalue > 99)){
+"113
+[; ;mains3.c: 113:     else if ((113 > ADC_analogvalue) & (ADC_analogvalue > 99)){
 [e :U 145 ]
 [e $ ! & > -> 113 `i -> _ADC_analogvalue `i > -> _ADC_analogvalue `i -> 99 `i 147  ]
 {
-"113
-[; ;mains3.c: 113:         RD0 = 0;
-[e = _RD0 -> -> 0 `i `b ]
 "114
-[; ;mains3.c: 114:         RD1 = 1;
-[e = _RD1 -> -> 1 `i `b ]
+[; ;mains3.c: 114:         RD0 = 0;
+[e = _RD0 -> -> 0 `i `b ]
 "115
-[; ;mains3.c: 115:         RD2 = 0;
-[e = _RD2 -> -> 0 `i `b ]
+[; ;mains3.c: 115:         RD1 = 1;
+[e = _RD1 -> -> 1 `i `b ]
 "116
-[; ;mains3.c: 116:         }
+[; ;mains3.c: 116:         RD2 = 0;
+[e = _RD2 -> -> 0 `i `b ]
+"117
+[; ;mains3.c: 117:         }
 }
 [e $U 148  ]
-"117
-[; ;mains3.c: 117:     else if (ADC_analogvalue > 113){
+"118
+[; ;mains3.c: 118:     else if (ADC_analogvalue > 113){
 [e :U 147 ]
 [e $ ! > -> _ADC_analogvalue `i -> 113 `i 149  ]
 {
-"118
-[; ;mains3.c: 118:         RD0 = 1;
-[e = _RD0 -> -> 1 `i `b ]
 "119
-[; ;mains3.c: 119:         RD1 = 0;
-[e = _RD1 -> -> 0 `i `b ]
+[; ;mains3.c: 119:         RD0 = 1;
+[e = _RD0 -> -> 1 `i `b ]
 "120
-[; ;mains3.c: 120:         RD2 = 0;
-[e = _RD2 -> -> 0 `i `b ]
+[; ;mains3.c: 120:         RD1 = 0;
+[e = _RD1 -> -> 0 `i `b ]
 "121
-[; ;mains3.c: 121:     }
+[; ;mains3.c: 121:         RD2 = 0;
+[e = _RD2 -> -> 0 `i `b ]
+"122
+[; ;mains3.c: 122:     }
 }
 [e :U 149 ]
 [e :U 148 ]
 [e :U 146 ]
-"122
-[; ;mains3.c: 122: }
+"123
+[; ;mains3.c: 123: }
 [e :UE 144 ]
 }
 [v $root$_isr `(v ~T0 @X0 0 e ]
-"128
-[; ;mains3.c: 128: void __attribute__((picinterrupt(("")))) isr(void) {
+"129
+[; ;mains3.c: 129: void __attribute__((picinterrupt(("")))) isr(void) {
 [v _isr `(v ~T1 @X0 1 ef ]
 {
 [e :U _isr ]
 [f ]
-"129
-[; ;mains3.c: 129:     if(PIR1bits.ADIF == 1){
+"130
+[; ;mains3.c: 130:     if(PIR1bits.ADIF == 1){
 [e $ ! == -> . . _PIR1bits 0 6 `i -> 1 `i 151  ]
 {
-"130
-[; ;mains3.c: 130:         ADC_analogvalue = ADRESH;
-[e = _ADC_analogvalue _ADRESH ]
 "131
-[; ;mains3.c: 131:         ADC_cflag = 1;
-[e = _ADC_cflag -> -> 1 `i `uc ]
+[; ;mains3.c: 131:         ADC_analogvalue = ADRESH;
+[e = _ADC_analogvalue _ADRESH ]
 "132
-[; ;mains3.c: 132:         PIR1bits.ADIF = 0;
-[e = . . _PIR1bits 0 6 -> -> 0 `i `uc ]
+[; ;mains3.c: 132:         ADC_cflag = 1;
+[e = _ADC_cflag -> -> 1 `i `uc ]
 "133
-[; ;mains3.c: 133:     }
+[; ;mains3.c: 133:         PIR1bits.ADIF = 0;
+[e = . . _PIR1bits 0 6 -> -> 0 `i `uc ]
+"134
+[; ;mains3.c: 134:     }
 }
 [e :U 151 ]
-"134
-[; ;mains3.c: 134: }
+"135
+[; ;mains3.c: 135: }
 [e :UE 150 ]
 }

@@ -102,13 +102,13 @@ cinit FF8 FFF CODE FF8 0
 maintext FF2 FF7 CODE FF2 0
 %locals
 dist/default/production\Master.X.production.o
-C:\Users\camil\AppData\Local\Temp\sk3g.s
+C:\Users\camil\AppData\Local\Temp\sc90.s
 591 7FC 0 CODE 0
 594 7FC 0 CODE 0
 600 7FC 0 CODE 0
 602 7FC 0 CODE 0
 603 7FD 0 CODE 0
 mainm.c
-35 7F9 0 CODE 0
 36 7F9 0 CODE 0
 37 7F9 0 CODE 0
+38 7F9 0 CODE 0

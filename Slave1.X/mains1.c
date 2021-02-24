@@ -31,6 +31,7 @@
 #include <xc.h>
 #include <stdint.h>
 #include "ADC.h"
+#include "SPI.h"
 
 //******************************************************************************
 //                                  VARIABLES

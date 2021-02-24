@@ -31,6 +31,7 @@
 
 #include <xc.h>
 #include "SPI.h"
+#include "SPI.h"
 
 void main(void) {
     return;
