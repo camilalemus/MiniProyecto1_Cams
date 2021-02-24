@@ -3,12 +3,12 @@
     <type>com.microchip.mplab.nbide.embedded.makeproject</type>
     <configuration>
         <data xmlns="http://www.netbeans.org/ns/make-project/1">
-            <name>Slave1</name>
-            <creation-uuid>013a71b5-953a-409c-8bad-c2a25a3f23c6</creation-uuid>
+            <name>Slave2</name>
+            <creation-uuid>22d8c44d-52d0-470e-a533-bb1b1880aa80</creation-uuid>
             <make-project-type>0</make-project-type>
             <c-extensions>c</c-extensions>
             <cpp-extensions/>
-            <header-extensions>h</header-extensions>
+            <header-extensions/>
             <asminc-extensions/>
             <sourceEncoding>UTF-8</sourceEncoding>
             <make-dep-projects/>
