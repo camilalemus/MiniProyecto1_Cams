@@ -71,11 +71,11 @@ void main(void) {
 //******************************************************************************
 
 void setup(){
-        
+
     ANSEL = 0;
     ANSELH = 0;
     ANSELbits.ANS0 = 1;
-    
+
     INTCONbits.GIE = 1;             //Set Global interrupts enable
     TMR0 = 0;                       //Set Timer0 start point
     TRISA = 0;
@@ -92,7 +92,7 @@ void setup(){
     IOCBbits.IOCB0 = 1;             //Pines
     IOCBbits.IOCB1 = 1;
     INTCONbits.RBIF = 0;
-    
+
     PIR1bits.ADIF = 0; //ADC interrupt flag cleared
     PIE1bits.ADIE = 1; //ADC interrupt enable ON
     ADCON0bits.ADON = 1; //ADC Enable bit
