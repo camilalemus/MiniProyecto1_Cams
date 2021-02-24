@@ -13,16 +13,17 @@
 %PSECTS
 $dist/default/production\Slave3.X.production.o
 cinit CODE 0 F F 6 2
-text1 CODE 0 14B 14B 27 2
-text2 CODE 0 15 15 107 2
-text3 CODE 0 172 172 14 2
+text1 CODE 0 14B 14B 2A 2
+text2 CODE 0 175 175 1D 2
+text3 CODE 0 15 15 107 2
+text4 CODE 0 192 192 14 2
 maintext CODE 0 11C 11C 2F 2
 cstackCOMMON COMMON 1 70 70 9 1
 cstackBANK0 BANK0 1 20 20 1 1
 intentry CODE 0 4 4 8 2
 bssCOMMON COMMON 1 79 79 2 1
 config CONFIG 4 2007 2007 2 2
-$C:\Users\camil\AppData\Local\Temp\s660.o
+$C:\Users\camil\AppData\Local\Temp\sgkg.o
 reset_vec CODE 0 0 0 3 2
 end_init CODE 0 C C 3 2
 config CONFIG 4 2007 2007 2 2
@@ -41,13 +42,13 @@ BANK1 A0-EF 1
 BANK2 110-16F 1
 BANK3 190-1EF 1
 CONST 3-3 2
-CONST 186-1FFF 2
+CONST 1A6-1FFF 2
 ENTRY 3-3 2
-ENTRY 186-1FFF 2
+ENTRY 1A6-1FFF 2
 IDLOC 2000-2003 2
 STACK 110-16F 1
 CODE 3-3 2
-CODE 186-1FFF 2
+CODE 1A6-1FFF 2
 SFR0 0-1F 1
 SFR1 80-9F 1
 SFR2 100-10F 1
@@ -55,9 +56,9 @@ SFR3 180-18F 1
 COMMON 7B-7D 1
 EEDATA 2100-21FF 2
 STRCODE 3-3 2
-STRCODE 186-1FFF 2
+STRCODE 1A6-1FFF 2
 STRING 3-3 2
-STRING 186-1FFF 2
+STRING 1A6-1FFF 2
 # %LINETAB Section
 # This section enumerates the file/line to address mappings.
 # The beginning of the section is indicated by %LINETAB.
@@ -72,146 +73,156 @@ STRING 186-1FFF 2
 # All other numeric values are in decimal.
 %LINETAB
 $dist/default/production\Slave3.X.production.o
-F cinit CODE >624:C:\Users\camil\AppData\Local\Temp\s660.s
-F cinit CODE >627:C:\Users\camil\AppData\Local\Temp\s660.s
-F cinit CODE >641:C:\Users\camil\AppData\Local\Temp\s660.s
-10 cinit CODE >642:C:\Users\camil\AppData\Local\Temp\s660.s
-11 cinit CODE >648:C:\Users\camil\AppData\Local\Temp\s660.s
-11 cinit CODE >650:C:\Users\camil\AppData\Local\Temp\s660.s
-12 cinit CODE >651:C:\Users\camil\AppData\Local\Temp\s660.s
-4 intentry CODE >109:C:\Users\camil\Desktop\UVG\2021\Electrónica Digital 2\MiniProyecto1_Cams\MiniProyecto1_Cams\Slave3.X\mains3.c
-172 text3 CODE >109:C:\Users\camil\Desktop\UVG\2021\Electrónica Digital 2\MiniProyecto1_Cams\MiniProyecto1_Cams\Slave3.X\mains3.c
-172 text3 CODE >110:C:\Users\camil\Desktop\UVG\2021\Electrónica Digital 2\MiniProyecto1_Cams\MiniProyecto1_Cams\Slave3.X\mains3.c
-178 text3 CODE >111:C:\Users\camil\Desktop\UVG\2021\Electrónica Digital 2\MiniProyecto1_Cams\MiniProyecto1_Cams\Slave3.X\mains3.c
-17C text3 CODE >112:C:\Users\camil\Desktop\UVG\2021\Electrónica Digital 2\MiniProyecto1_Cams\MiniProyecto1_Cams\Slave3.X\mains3.c
-17E text3 CODE >113:C:\Users\camil\Desktop\UVG\2021\Electrónica Digital 2\MiniProyecto1_Cams\MiniProyecto1_Cams\Slave3.X\mains3.c
-17F text3 CODE >115:C:\Users\camil\Desktop\UVG\2021\Electrónica Digital 2\MiniProyecto1_Cams\MiniProyecto1_Cams\Slave3.X\mains3.c
-15 text2 CODE >3:C:\Users\camil\Desktop\UVG\2021\Electrónica Digital 2\MiniProyecto1_Cams\MiniProyecto1_Cams\Slave3.X\ADC.c
-16 text2 CODE >5:C:\Users\camil\Desktop\UVG\2021\Electrónica Digital 2\MiniProyecto1_Cams\MiniProyecto1_Cams\Slave3.X\ADC.c
-17 text2 CODE >6:C:\Users\camil\Desktop\UVG\2021\Electrónica Digital 2\MiniProyecto1_Cams\MiniProyecto1_Cams\Slave3.X\ADC.c
-17 text2 CODE >7:C:\Users\camil\Desktop\UVG\2021\Electrónica Digital 2\MiniProyecto1_Cams\MiniProyecto1_Cams\Slave3.X\ADC.c
-1A text2 CODE >8:C:\Users\camil\Desktop\UVG\2021\Electrónica Digital 2\MiniProyecto1_Cams\MiniProyecto1_Cams\Slave3.X\ADC.c
-1B text2 CODE >9:C:\Users\camil\Desktop\UVG\2021\Electrónica Digital 2\MiniProyecto1_Cams\MiniProyecto1_Cams\Slave3.X\ADC.c
-1C text2 CODE >10:C:\Users\camil\Desktop\UVG\2021\Electrónica Digital 2\MiniProyecto1_Cams\MiniProyecto1_Cams\Slave3.X\ADC.c
-1C text2 CODE >11:C:\Users\camil\Desktop\UVG\2021\Electrónica Digital 2\MiniProyecto1_Cams\MiniProyecto1_Cams\Slave3.X\ADC.c
-1F text2 CODE >12:C:\Users\camil\Desktop\UVG\2021\Electrónica Digital 2\MiniProyecto1_Cams\MiniProyecto1_Cams\Slave3.X\ADC.c
-20 text2 CODE >13:C:\Users\camil\Desktop\UVG\2021\Electrónica Digital 2\MiniProyecto1_Cams\MiniProyecto1_Cams\Slave3.X\ADC.c
-21 text2 CODE >14:C:\Users\camil\Desktop\UVG\2021\Electrónica Digital 2\MiniProyecto1_Cams\MiniProyecto1_Cams\Slave3.X\ADC.c
-21 text2 CODE >15:C:\Users\camil\Desktop\UVG\2021\Electrónica Digital 2\MiniProyecto1_Cams\MiniProyecto1_Cams\Slave3.X\ADC.c
-24 text2 CODE >16:C:\Users\camil\Desktop\UVG\2021\Electrónica Digital 2\MiniProyecto1_Cams\MiniProyecto1_Cams\Slave3.X\ADC.c
-25 text2 CODE >17:C:\Users\camil\Desktop\UVG\2021\Electrónica Digital 2\MiniProyecto1_Cams\MiniProyecto1_Cams\Slave3.X\ADC.c
-26 text2 CODE >18:C:\Users\camil\Desktop\UVG\2021\Electrónica Digital 2\MiniProyecto1_Cams\MiniProyecto1_Cams\Slave3.X\ADC.c
-26 text2 CODE >19:C:\Users\camil\Desktop\UVG\2021\Electrónica Digital 2\MiniProyecto1_Cams\MiniProyecto1_Cams\Slave3.X\ADC.c
-29 text2 CODE >20:C:\Users\camil\Desktop\UVG\2021\Electrónica Digital 2\MiniProyecto1_Cams\MiniProyecto1_Cams\Slave3.X\ADC.c
-2A text2 CODE >21:C:\Users\camil\Desktop\UVG\2021\Electrónica Digital 2\MiniProyecto1_Cams\MiniProyecto1_Cams\Slave3.X\ADC.c
-2B text2 CODE >22:C:\Users\camil\Desktop\UVG\2021\Electrónica Digital 2\MiniProyecto1_Cams\MiniProyecto1_Cams\Slave3.X\ADC.c
-2B text2 CODE >23:C:\Users\camil\Desktop\UVG\2021\Electrónica Digital 2\MiniProyecto1_Cams\MiniProyecto1_Cams\Slave3.X\ADC.c
-2E text2 CODE >24:C:\Users\camil\Desktop\UVG\2021\Electrónica Digital 2\MiniProyecto1_Cams\MiniProyecto1_Cams\Slave3.X\ADC.c
-2F text2 CODE >25:C:\Users\camil\Desktop\UVG\2021\Electrónica Digital 2\MiniProyecto1_Cams\MiniProyecto1_Cams\Slave3.X\ADC.c
-30 text2 CODE >26:C:\Users\camil\Desktop\UVG\2021\Electrónica Digital 2\MiniProyecto1_Cams\MiniProyecto1_Cams\Slave3.X\ADC.c
-46 text2 CODE >30:C:\Users\camil\Desktop\UVG\2021\Electrónica Digital 2\MiniProyecto1_Cams\MiniProyecto1_Cams\Slave3.X\ADC.c
-48 text2 CODE >31:C:\Users\camil\Desktop\UVG\2021\Electrónica Digital 2\MiniProyecto1_Cams\MiniProyecto1_Cams\Slave3.X\ADC.c
-49 text2 CODE >33:C:\Users\camil\Desktop\UVG\2021\Electrónica Digital 2\MiniProyecto1_Cams\MiniProyecto1_Cams\Slave3.X\ADC.c
-4D text2 CODE >34:C:\Users\camil\Desktop\UVG\2021\Electrónica Digital 2\MiniProyecto1_Cams\MiniProyecto1_Cams\Slave3.X\ADC.c
-4E text2 CODE >36:C:\Users\camil\Desktop\UVG\2021\Electrónica Digital 2\MiniProyecto1_Cams\MiniProyecto1_Cams\Slave3.X\ADC.c
-52 text2 CODE >37:C:\Users\camil\Desktop\UVG\2021\Electrónica Digital 2\MiniProyecto1_Cams\MiniProyecto1_Cams\Slave3.X\ADC.c
-53 text2 CODE >39:C:\Users\camil\Desktop\UVG\2021\Electrónica Digital 2\MiniProyecto1_Cams\MiniProyecto1_Cams\Slave3.X\ADC.c
-57 text2 CODE >40:C:\Users\camil\Desktop\UVG\2021\Electrónica Digital 2\MiniProyecto1_Cams\MiniProyecto1_Cams\Slave3.X\ADC.c
-58 text2 CODE >42:C:\Users\camil\Desktop\UVG\2021\Electrónica Digital 2\MiniProyecto1_Cams\MiniProyecto1_Cams\Slave3.X\ADC.c
-5C text2 CODE >43:C:\Users\camil\Desktop\UVG\2021\Electrónica Digital 2\MiniProyecto1_Cams\MiniProyecto1_Cams\Slave3.X\ADC.c
-5D text2 CODE >45:C:\Users\camil\Desktop\UVG\2021\Electrónica Digital 2\MiniProyecto1_Cams\MiniProyecto1_Cams\Slave3.X\ADC.c
-61 text2 CODE >46:C:\Users\camil\Desktop\UVG\2021\Electrónica Digital 2\MiniProyecto1_Cams\MiniProyecto1_Cams\Slave3.X\ADC.c
-62 text2 CODE >48:C:\Users\camil\Desktop\UVG\2021\Electrónica Digital 2\MiniProyecto1_Cams\MiniProyecto1_Cams\Slave3.X\ADC.c
-66 text2 CODE >49:C:\Users\camil\Desktop\UVG\2021\Electrónica Digital 2\MiniProyecto1_Cams\MiniProyecto1_Cams\Slave3.X\ADC.c
-67 text2 CODE >51:C:\Users\camil\Desktop\UVG\2021\Electrónica Digital 2\MiniProyecto1_Cams\MiniProyecto1_Cams\Slave3.X\ADC.c
-6B text2 CODE >52:C:\Users\camil\Desktop\UVG\2021\Electrónica Digital 2\MiniProyecto1_Cams\MiniProyecto1_Cams\Slave3.X\ADC.c
-6C text2 CODE >54:C:\Users\camil\Desktop\UVG\2021\Electrónica Digital 2\MiniProyecto1_Cams\MiniProyecto1_Cams\Slave3.X\ADC.c
-70 text2 CODE >55:C:\Users\camil\Desktop\UVG\2021\Electrónica Digital 2\MiniProyecto1_Cams\MiniProyecto1_Cams\Slave3.X\ADC.c
-71 text2 CODE >57:C:\Users\camil\Desktop\UVG\2021\Electrónica Digital 2\MiniProyecto1_Cams\MiniProyecto1_Cams\Slave3.X\ADC.c
-75 text2 CODE >58:C:\Users\camil\Desktop\UVG\2021\Electrónica Digital 2\MiniProyecto1_Cams\MiniProyecto1_Cams\Slave3.X\ADC.c
-76 text2 CODE >60:C:\Users\camil\Desktop\UVG\2021\Electrónica Digital 2\MiniProyecto1_Cams\MiniProyecto1_Cams\Slave3.X\ADC.c
-7A text2 CODE >61:C:\Users\camil\Desktop\UVG\2021\Electrónica Digital 2\MiniProyecto1_Cams\MiniProyecto1_Cams\Slave3.X\ADC.c
-7B text2 CODE >63:C:\Users\camil\Desktop\UVG\2021\Electrónica Digital 2\MiniProyecto1_Cams\MiniProyecto1_Cams\Slave3.X\ADC.c
-7F text2 CODE >64:C:\Users\camil\Desktop\UVG\2021\Electrónica Digital 2\MiniProyecto1_Cams\MiniProyecto1_Cams\Slave3.X\ADC.c
-80 text2 CODE >66:C:\Users\camil\Desktop\UVG\2021\Electrónica Digital 2\MiniProyecto1_Cams\MiniProyecto1_Cams\Slave3.X\ADC.c
-84 text2 CODE >67:C:\Users\camil\Desktop\UVG\2021\Electrónica Digital 2\MiniProyecto1_Cams\MiniProyecto1_Cams\Slave3.X\ADC.c
-85 text2 CODE >69:C:\Users\camil\Desktop\UVG\2021\Electrónica Digital 2\MiniProyecto1_Cams\MiniProyecto1_Cams\Slave3.X\ADC.c
-89 text2 CODE >70:C:\Users\camil\Desktop\UVG\2021\Electrónica Digital 2\MiniProyecto1_Cams\MiniProyecto1_Cams\Slave3.X\ADC.c
-8A text2 CODE >72:C:\Users\camil\Desktop\UVG\2021\Electrónica Digital 2\MiniProyecto1_Cams\MiniProyecto1_Cams\Slave3.X\ADC.c
-8E text2 CODE >73:C:\Users\camil\Desktop\UVG\2021\Electrónica Digital 2\MiniProyecto1_Cams\MiniProyecto1_Cams\Slave3.X\ADC.c
-8F text2 CODE >75:C:\Users\camil\Desktop\UVG\2021\Electrónica Digital 2\MiniProyecto1_Cams\MiniProyecto1_Cams\Slave3.X\ADC.c
-91 text2 CODE >76:C:\Users\camil\Desktop\UVG\2021\Electrónica Digital 2\MiniProyecto1_Cams\MiniProyecto1_Cams\Slave3.X\ADC.c
-92 text2 CODE >78:C:\Users\camil\Desktop\UVG\2021\Electrónica Digital 2\MiniProyecto1_Cams\MiniProyecto1_Cams\Slave3.X\ADC.c
-96 text2 CODE >79:C:\Users\camil\Desktop\UVG\2021\Electrónica Digital 2\MiniProyecto1_Cams\MiniProyecto1_Cams\Slave3.X\ADC.c
-97 text2 CODE >80:C:\Users\camil\Desktop\UVG\2021\Electrónica Digital 2\MiniProyecto1_Cams\MiniProyecto1_Cams\Slave3.X\ADC.c
-D1 text2 CODE >83:C:\Users\camil\Desktop\UVG\2021\Electrónica Digital 2\MiniProyecto1_Cams\MiniProyecto1_Cams\Slave3.X\ADC.c
-D1 text2 CODE >84:C:\Users\camil\Desktop\UVG\2021\Electrónica Digital 2\MiniProyecto1_Cams\MiniProyecto1_Cams\Slave3.X\ADC.c
-D4 text2 CODE >85:C:\Users\camil\Desktop\UVG\2021\Electrónica Digital 2\MiniProyecto1_Cams\MiniProyecto1_Cams\Slave3.X\ADC.c
-D5 text2 CODE >86:C:\Users\camil\Desktop\UVG\2021\Electrónica Digital 2\MiniProyecto1_Cams\MiniProyecto1_Cams\Slave3.X\ADC.c
-D5 text2 CODE >87:C:\Users\camil\Desktop\UVG\2021\Electrónica Digital 2\MiniProyecto1_Cams\MiniProyecto1_Cams\Slave3.X\ADC.c
-D8 text2 CODE >88:C:\Users\camil\Desktop\UVG\2021\Electrónica Digital 2\MiniProyecto1_Cams\MiniProyecto1_Cams\Slave3.X\ADC.c
-D9 text2 CODE >89:C:\Users\camil\Desktop\UVG\2021\Electrónica Digital 2\MiniProyecto1_Cams\MiniProyecto1_Cams\Slave3.X\ADC.c
-D9 text2 CODE >90:C:\Users\camil\Desktop\UVG\2021\Electrónica Digital 2\MiniProyecto1_Cams\MiniProyecto1_Cams\Slave3.X\ADC.c
-DC text2 CODE >91:C:\Users\camil\Desktop\UVG\2021\Electrónica Digital 2\MiniProyecto1_Cams\MiniProyecto1_Cams\Slave3.X\ADC.c
-DD text2 CODE >92:C:\Users\camil\Desktop\UVG\2021\Electrónica Digital 2\MiniProyecto1_Cams\MiniProyecto1_Cams\Slave3.X\ADC.c
-ED text2 CODE >95:C:\Users\camil\Desktop\UVG\2021\Electrónica Digital 2\MiniProyecto1_Cams\MiniProyecto1_Cams\Slave3.X\ADC.c
-ED text2 CODE >96:C:\Users\camil\Desktop\UVG\2021\Electrónica Digital 2\MiniProyecto1_Cams\MiniProyecto1_Cams\Slave3.X\ADC.c
-EE text2 CODE >97:C:\Users\camil\Desktop\UVG\2021\Electrónica Digital 2\MiniProyecto1_Cams\MiniProyecto1_Cams\Slave3.X\ADC.c
-EF text2 CODE >98:C:\Users\camil\Desktop\UVG\2021\Electrónica Digital 2\MiniProyecto1_Cams\MiniProyecto1_Cams\Slave3.X\ADC.c
-F0 text2 CODE >99:C:\Users\camil\Desktop\UVG\2021\Electrónica Digital 2\MiniProyecto1_Cams\MiniProyecto1_Cams\Slave3.X\ADC.c
-F0 text2 CODE >100:C:\Users\camil\Desktop\UVG\2021\Electrónica Digital 2\MiniProyecto1_Cams\MiniProyecto1_Cams\Slave3.X\ADC.c
-F1 text2 CODE >101:C:\Users\camil\Desktop\UVG\2021\Electrónica Digital 2\MiniProyecto1_Cams\MiniProyecto1_Cams\Slave3.X\ADC.c
-F2 text2 CODE >102:C:\Users\camil\Desktop\UVG\2021\Electrónica Digital 2\MiniProyecto1_Cams\MiniProyecto1_Cams\Slave3.X\ADC.c
-F3 text2 CODE >103:C:\Users\camil\Desktop\UVG\2021\Electrónica Digital 2\MiniProyecto1_Cams\MiniProyecto1_Cams\Slave3.X\ADC.c
-F3 text2 CODE >104:C:\Users\camil\Desktop\UVG\2021\Electrónica Digital 2\MiniProyecto1_Cams\MiniProyecto1_Cams\Slave3.X\ADC.c
-F4 text2 CODE >105:C:\Users\camil\Desktop\UVG\2021\Electrónica Digital 2\MiniProyecto1_Cams\MiniProyecto1_Cams\Slave3.X\ADC.c
-F5 text2 CODE >106:C:\Users\camil\Desktop\UVG\2021\Electrónica Digital 2\MiniProyecto1_Cams\MiniProyecto1_Cams\Slave3.X\ADC.c
-F6 text2 CODE >107:C:\Users\camil\Desktop\UVG\2021\Electrónica Digital 2\MiniProyecto1_Cams\MiniProyecto1_Cams\Slave3.X\ADC.c
-F6 text2 CODE >108:C:\Users\camil\Desktop\UVG\2021\Electrónica Digital 2\MiniProyecto1_Cams\MiniProyecto1_Cams\Slave3.X\ADC.c
-F7 text2 CODE >109:C:\Users\camil\Desktop\UVG\2021\Electrónica Digital 2\MiniProyecto1_Cams\MiniProyecto1_Cams\Slave3.X\ADC.c
-F8 text2 CODE >110:C:\Users\camil\Desktop\UVG\2021\Electrónica Digital 2\MiniProyecto1_Cams\MiniProyecto1_Cams\Slave3.X\ADC.c
-F9 text2 CODE >111:C:\Users\camil\Desktop\UVG\2021\Electrónica Digital 2\MiniProyecto1_Cams\MiniProyecto1_Cams\Slave3.X\ADC.c
-F9 text2 CODE >112:C:\Users\camil\Desktop\UVG\2021\Electrónica Digital 2\MiniProyecto1_Cams\MiniProyecto1_Cams\Slave3.X\ADC.c
-FA text2 CODE >113:C:\Users\camil\Desktop\UVG\2021\Electrónica Digital 2\MiniProyecto1_Cams\MiniProyecto1_Cams\Slave3.X\ADC.c
-FB text2 CODE >114:C:\Users\camil\Desktop\UVG\2021\Electrónica Digital 2\MiniProyecto1_Cams\MiniProyecto1_Cams\Slave3.X\ADC.c
-FC text2 CODE >115:C:\Users\camil\Desktop\UVG\2021\Electrónica Digital 2\MiniProyecto1_Cams\MiniProyecto1_Cams\Slave3.X\ADC.c
-112 text2 CODE >117:C:\Users\camil\Desktop\UVG\2021\Electrónica Digital 2\MiniProyecto1_Cams\MiniProyecto1_Cams\Slave3.X\ADC.c
-115 text2 CODE >118:C:\Users\camil\Desktop\UVG\2021\Electrónica Digital 2\MiniProyecto1_Cams\MiniProyecto1_Cams\Slave3.X\ADC.c
-118 text2 CODE >119:C:\Users\camil\Desktop\UVG\2021\Electrónica Digital 2\MiniProyecto1_Cams\MiniProyecto1_Cams\Slave3.X\ADC.c
-11B text2 CODE >120:C:\Users\camil\Desktop\UVG\2021\Electrónica Digital 2\MiniProyecto1_Cams\MiniProyecto1_Cams\Slave3.X\ADC.c
-14B text1 CODE >73:C:\Users\camil\Desktop\UVG\2021\Electrónica Digital 2\MiniProyecto1_Cams\MiniProyecto1_Cams\Slave3.X\mains3.c
-14B text1 CODE >75:C:\Users\camil\Desktop\UVG\2021\Electrónica Digital 2\MiniProyecto1_Cams\MiniProyecto1_Cams\Slave3.X\mains3.c
-14E text1 CODE >76:C:\Users\camil\Desktop\UVG\2021\Electrónica Digital 2\MiniProyecto1_Cams\MiniProyecto1_Cams\Slave3.X\mains3.c
-14F text1 CODE >77:C:\Users\camil\Desktop\UVG\2021\Electrónica Digital 2\MiniProyecto1_Cams\MiniProyecto1_Cams\Slave3.X\mains3.c
-150 text1 CODE >79:C:\Users\camil\Desktop\UVG\2021\Electrónica Digital 2\MiniProyecto1_Cams\MiniProyecto1_Cams\Slave3.X\mains3.c
-151 text1 CODE >80:C:\Users\camil\Desktop\UVG\2021\Electrónica Digital 2\MiniProyecto1_Cams\MiniProyecto1_Cams\Slave3.X\mains3.c
-154 text1 CODE >81:C:\Users\camil\Desktop\UVG\2021\Electrónica Digital 2\MiniProyecto1_Cams\MiniProyecto1_Cams\Slave3.X\mains3.c
-157 text1 CODE >82:C:\Users\camil\Desktop\UVG\2021\Electrónica Digital 2\MiniProyecto1_Cams\MiniProyecto1_Cams\Slave3.X\mains3.c
-158 text1 CODE >83:C:\Users\camil\Desktop\UVG\2021\Electrónica Digital 2\MiniProyecto1_Cams\MiniProyecto1_Cams\Slave3.X\mains3.c
-159 text1 CODE >84:C:\Users\camil\Desktop\UVG\2021\Electrónica Digital 2\MiniProyecto1_Cams\MiniProyecto1_Cams\Slave3.X\mains3.c
-15A text1 CODE >85:C:\Users\camil\Desktop\UVG\2021\Electrónica Digital 2\MiniProyecto1_Cams\MiniProyecto1_Cams\Slave3.X\mains3.c
-15B text1 CODE >86:C:\Users\camil\Desktop\UVG\2021\Electrónica Digital 2\MiniProyecto1_Cams\MiniProyecto1_Cams\Slave3.X\mains3.c
-15E text1 CODE >87:C:\Users\camil\Desktop\UVG\2021\Electrónica Digital 2\MiniProyecto1_Cams\MiniProyecto1_Cams\Slave3.X\mains3.c
-15F text1 CODE >88:C:\Users\camil\Desktop\UVG\2021\Electrónica Digital 2\MiniProyecto1_Cams\MiniProyecto1_Cams\Slave3.X\mains3.c
-162 text1 CODE >89:C:\Users\camil\Desktop\UVG\2021\Electrónica Digital 2\MiniProyecto1_Cams\MiniProyecto1_Cams\Slave3.X\mains3.c
-163 text1 CODE >90:C:\Users\camil\Desktop\UVG\2021\Electrónica Digital 2\MiniProyecto1_Cams\MiniProyecto1_Cams\Slave3.X\mains3.c
-164 text1 CODE >91:C:\Users\camil\Desktop\UVG\2021\Electrónica Digital 2\MiniProyecto1_Cams\MiniProyecto1_Cams\Slave3.X\mains3.c
-165 text1 CODE >92:C:\Users\camil\Desktop\UVG\2021\Electrónica Digital 2\MiniProyecto1_Cams\MiniProyecto1_Cams\Slave3.X\mains3.c
-166 text1 CODE >93:C:\Users\camil\Desktop\UVG\2021\Electrónica Digital 2\MiniProyecto1_Cams\MiniProyecto1_Cams\Slave3.X\mains3.c
-167 text1 CODE >94:C:\Users\camil\Desktop\UVG\2021\Electrónica Digital 2\MiniProyecto1_Cams\MiniProyecto1_Cams\Slave3.X\mains3.c
-168 text1 CODE >96:C:\Users\camil\Desktop\UVG\2021\Electrónica Digital 2\MiniProyecto1_Cams\MiniProyecto1_Cams\Slave3.X\mains3.c
-16B text1 CODE >97:C:\Users\camil\Desktop\UVG\2021\Electrónica Digital 2\MiniProyecto1_Cams\MiniProyecto1_Cams\Slave3.X\mains3.c
-16E text1 CODE >98:C:\Users\camil\Desktop\UVG\2021\Electrónica Digital 2\MiniProyecto1_Cams\MiniProyecto1_Cams\Slave3.X\mains3.c
-171 text1 CODE >99:C:\Users\camil\Desktop\UVG\2021\Electrónica Digital 2\MiniProyecto1_Cams\MiniProyecto1_Cams\Slave3.X\mains3.c
-11C maintext CODE >54:C:\Users\camil\Desktop\UVG\2021\Electrónica Digital 2\MiniProyecto1_Cams\MiniProyecto1_Cams\Slave3.X\mains3.c
-11C maintext CODE >55:C:\Users\camil\Desktop\UVG\2021\Electrónica Digital 2\MiniProyecto1_Cams\MiniProyecto1_Cams\Slave3.X\mains3.c
-121 maintext CODE >56:C:\Users\camil\Desktop\UVG\2021\Electrónica Digital 2\MiniProyecto1_Cams\MiniProyecto1_Cams\Slave3.X\mains3.c
-130 maintext CODE >58:C:\Users\camil\Desktop\UVG\2021\Electrónica Digital 2\MiniProyecto1_Cams\MiniProyecto1_Cams\Slave3.X\mains3.c
-132 maintext CODE >60:C:\Users\camil\Desktop\UVG\2021\Electrónica Digital 2\MiniProyecto1_Cams\MiniProyecto1_Cams\Slave3.X\mains3.c
-136 maintext CODE >61:C:\Users\camil\Desktop\UVG\2021\Electrónica Digital 2\MiniProyecto1_Cams\MiniProyecto1_Cams\Slave3.X\mains3.c
-13B maintext CODE >62:C:\Users\camil\Desktop\UVG\2021\Electrónica Digital 2\MiniProyecto1_Cams\MiniProyecto1_Cams\Slave3.X\mains3.c
-143 maintext CODE >63:C:\Users\camil\Desktop\UVG\2021\Electrónica Digital 2\MiniProyecto1_Cams\MiniProyecto1_Cams\Slave3.X\mains3.c
-144 maintext CODE >64:C:\Users\camil\Desktop\UVG\2021\Electrónica Digital 2\MiniProyecto1_Cams\MiniProyecto1_Cams\Slave3.X\mains3.c
+F cinit CODE >627:C:\Users\camil\AppData\Local\Temp\sgkg.s
+F cinit CODE >630:C:\Users\camil\AppData\Local\Temp\sgkg.s
+F cinit CODE >644:C:\Users\camil\AppData\Local\Temp\sgkg.s
+10 cinit CODE >645:C:\Users\camil\AppData\Local\Temp\sgkg.s
+11 cinit CODE >651:C:\Users\camil\AppData\Local\Temp\sgkg.s
+11 cinit CODE >653:C:\Users\camil\AppData\Local\Temp\sgkg.s
+12 cinit CODE >654:C:\Users\camil\AppData\Local\Temp\sgkg.s
+4 intentry CODE >128:C:\Users\camil\Desktop\UVG\2021\Electrónica Digital 2\MiniProyecto1_Cams\MiniProyecto1_Cams\Slave3.X\mains3.c
+192 text4 CODE >128:C:\Users\camil\Desktop\UVG\2021\Electrónica Digital 2\MiniProyecto1_Cams\MiniProyecto1_Cams\Slave3.X\mains3.c
+192 text4 CODE >129:C:\Users\camil\Desktop\UVG\2021\Electrónica Digital 2\MiniProyecto1_Cams\MiniProyecto1_Cams\Slave3.X\mains3.c
+198 text4 CODE >130:C:\Users\camil\Desktop\UVG\2021\Electrónica Digital 2\MiniProyecto1_Cams\MiniProyecto1_Cams\Slave3.X\mains3.c
+19C text4 CODE >131:C:\Users\camil\Desktop\UVG\2021\Electrónica Digital 2\MiniProyecto1_Cams\MiniProyecto1_Cams\Slave3.X\mains3.c
+19E text4 CODE >132:C:\Users\camil\Desktop\UVG\2021\Electrónica Digital 2\MiniProyecto1_Cams\MiniProyecto1_Cams\Slave3.X\mains3.c
+19F text4 CODE >134:C:\Users\camil\Desktop\UVG\2021\Electrónica Digital 2\MiniProyecto1_Cams\MiniProyecto1_Cams\Slave3.X\mains3.c
+15 text3 CODE >3:C:\Users\camil\Desktop\UVG\2021\Electrónica Digital 2\MiniProyecto1_Cams\MiniProyecto1_Cams\Slave3.X\ADC.c
+16 text3 CODE >5:C:\Users\camil\Desktop\UVG\2021\Electrónica Digital 2\MiniProyecto1_Cams\MiniProyecto1_Cams\Slave3.X\ADC.c
+17 text3 CODE >6:C:\Users\camil\Desktop\UVG\2021\Electrónica Digital 2\MiniProyecto1_Cams\MiniProyecto1_Cams\Slave3.X\ADC.c
+17 text3 CODE >7:C:\Users\camil\Desktop\UVG\2021\Electrónica Digital 2\MiniProyecto1_Cams\MiniProyecto1_Cams\Slave3.X\ADC.c
+1A text3 CODE >8:C:\Users\camil\Desktop\UVG\2021\Electrónica Digital 2\MiniProyecto1_Cams\MiniProyecto1_Cams\Slave3.X\ADC.c
+1B text3 CODE >9:C:\Users\camil\Desktop\UVG\2021\Electrónica Digital 2\MiniProyecto1_Cams\MiniProyecto1_Cams\Slave3.X\ADC.c
+1C text3 CODE >10:C:\Users\camil\Desktop\UVG\2021\Electrónica Digital 2\MiniProyecto1_Cams\MiniProyecto1_Cams\Slave3.X\ADC.c
+1C text3 CODE >11:C:\Users\camil\Desktop\UVG\2021\Electrónica Digital 2\MiniProyecto1_Cams\MiniProyecto1_Cams\Slave3.X\ADC.c
+1F text3 CODE >12:C:\Users\camil\Desktop\UVG\2021\Electrónica Digital 2\MiniProyecto1_Cams\MiniProyecto1_Cams\Slave3.X\ADC.c
+20 text3 CODE >13:C:\Users\camil\Desktop\UVG\2021\Electrónica Digital 2\MiniProyecto1_Cams\MiniProyecto1_Cams\Slave3.X\ADC.c
+21 text3 CODE >14:C:\Users\camil\Desktop\UVG\2021\Electrónica Digital 2\MiniProyecto1_Cams\MiniProyecto1_Cams\Slave3.X\ADC.c
+21 text3 CODE >15:C:\Users\camil\Desktop\UVG\2021\Electrónica Digital 2\MiniProyecto1_Cams\MiniProyecto1_Cams\Slave3.X\ADC.c
+24 text3 CODE >16:C:\Users\camil\Desktop\UVG\2021\Electrónica Digital 2\MiniProyecto1_Cams\MiniProyecto1_Cams\Slave3.X\ADC.c
+25 text3 CODE >17:C:\Users\camil\Desktop\UVG\2021\Electrónica Digital 2\MiniProyecto1_Cams\MiniProyecto1_Cams\Slave3.X\ADC.c
+26 text3 CODE >18:C:\Users\camil\Desktop\UVG\2021\Electrónica Digital 2\MiniProyecto1_Cams\MiniProyecto1_Cams\Slave3.X\ADC.c
+26 text3 CODE >19:C:\Users\camil\Desktop\UVG\2021\Electrónica Digital 2\MiniProyecto1_Cams\MiniProyecto1_Cams\Slave3.X\ADC.c
+29 text3 CODE >20:C:\Users\camil\Desktop\UVG\2021\Electrónica Digital 2\MiniProyecto1_Cams\MiniProyecto1_Cams\Slave3.X\ADC.c
+2A text3 CODE >21:C:\Users\camil\Desktop\UVG\2021\Electrónica Digital 2\MiniProyecto1_Cams\MiniProyecto1_Cams\Slave3.X\ADC.c
+2B text3 CODE >22:C:\Users\camil\Desktop\UVG\2021\Electrónica Digital 2\MiniProyecto1_Cams\MiniProyecto1_Cams\Slave3.X\ADC.c
+2B text3 CODE >23:C:\Users\camil\Desktop\UVG\2021\Electrónica Digital 2\MiniProyecto1_Cams\MiniProyecto1_Cams\Slave3.X\ADC.c
+2E text3 CODE >24:C:\Users\camil\Desktop\UVG\2021\Electrónica Digital 2\MiniProyecto1_Cams\MiniProyecto1_Cams\Slave3.X\ADC.c
+2F text3 CODE >25:C:\Users\camil\Desktop\UVG\2021\Electrónica Digital 2\MiniProyecto1_Cams\MiniProyecto1_Cams\Slave3.X\ADC.c
+30 text3 CODE >26:C:\Users\camil\Desktop\UVG\2021\Electrónica Digital 2\MiniProyecto1_Cams\MiniProyecto1_Cams\Slave3.X\ADC.c
+46 text3 CODE >30:C:\Users\camil\Desktop\UVG\2021\Electrónica Digital 2\MiniProyecto1_Cams\MiniProyecto1_Cams\Slave3.X\ADC.c
+48 text3 CODE >31:C:\Users\camil\Desktop\UVG\2021\Electrónica Digital 2\MiniProyecto1_Cams\MiniProyecto1_Cams\Slave3.X\ADC.c
+49 text3 CODE >33:C:\Users\camil\Desktop\UVG\2021\Electrónica Digital 2\MiniProyecto1_Cams\MiniProyecto1_Cams\Slave3.X\ADC.c
+4D text3 CODE >34:C:\Users\camil\Desktop\UVG\2021\Electrónica Digital 2\MiniProyecto1_Cams\MiniProyecto1_Cams\Slave3.X\ADC.c
+4E text3 CODE >36:C:\Users\camil\Desktop\UVG\2021\Electrónica Digital 2\MiniProyecto1_Cams\MiniProyecto1_Cams\Slave3.X\ADC.c
+52 text3 CODE >37:C:\Users\camil\Desktop\UVG\2021\Electrónica Digital 2\MiniProyecto1_Cams\MiniProyecto1_Cams\Slave3.X\ADC.c
+53 text3 CODE >39:C:\Users\camil\Desktop\UVG\2021\Electrónica Digital 2\MiniProyecto1_Cams\MiniProyecto1_Cams\Slave3.X\ADC.c
+57 text3 CODE >40:C:\Users\camil\Desktop\UVG\2021\Electrónica Digital 2\MiniProyecto1_Cams\MiniProyecto1_Cams\Slave3.X\ADC.c
+58 text3 CODE >42:C:\Users\camil\Desktop\UVG\2021\Electrónica Digital 2\MiniProyecto1_Cams\MiniProyecto1_Cams\Slave3.X\ADC.c
+5C text3 CODE >43:C:\Users\camil\Desktop\UVG\2021\Electrónica Digital 2\MiniProyecto1_Cams\MiniProyecto1_Cams\Slave3.X\ADC.c
+5D text3 CODE >45:C:\Users\camil\Desktop\UVG\2021\Electrónica Digital 2\MiniProyecto1_Cams\MiniProyecto1_Cams\Slave3.X\ADC.c
+61 text3 CODE >46:C:\Users\camil\Desktop\UVG\2021\Electrónica Digital 2\MiniProyecto1_Cams\MiniProyecto1_Cams\Slave3.X\ADC.c
+62 text3 CODE >48:C:\Users\camil\Desktop\UVG\2021\Electrónica Digital 2\MiniProyecto1_Cams\MiniProyecto1_Cams\Slave3.X\ADC.c
+66 text3 CODE >49:C:\Users\camil\Desktop\UVG\2021\Electrónica Digital 2\MiniProyecto1_Cams\MiniProyecto1_Cams\Slave3.X\ADC.c
+67 text3 CODE >51:C:\Users\camil\Desktop\UVG\2021\Electrónica Digital 2\MiniProyecto1_Cams\MiniProyecto1_Cams\Slave3.X\ADC.c
+6B text3 CODE >52:C:\Users\camil\Desktop\UVG\2021\Electrónica Digital 2\MiniProyecto1_Cams\MiniProyecto1_Cams\Slave3.X\ADC.c
+6C text3 CODE >54:C:\Users\camil\Desktop\UVG\2021\Electrónica Digital 2\MiniProyecto1_Cams\MiniProyecto1_Cams\Slave3.X\ADC.c
+70 text3 CODE >55:C:\Users\camil\Desktop\UVG\2021\Electrónica Digital 2\MiniProyecto1_Cams\MiniProyecto1_Cams\Slave3.X\ADC.c
+71 text3 CODE >57:C:\Users\camil\Desktop\UVG\2021\Electrónica Digital 2\MiniProyecto1_Cams\MiniProyecto1_Cams\Slave3.X\ADC.c
+75 text3 CODE >58:C:\Users\camil\Desktop\UVG\2021\Electrónica Digital 2\MiniProyecto1_Cams\MiniProyecto1_Cams\Slave3.X\ADC.c
+76 text3 CODE >60:C:\Users\camil\Desktop\UVG\2021\Electrónica Digital 2\MiniProyecto1_Cams\MiniProyecto1_Cams\Slave3.X\ADC.c
+7A text3 CODE >61:C:\Users\camil\Desktop\UVG\2021\Electrónica Digital 2\MiniProyecto1_Cams\MiniProyecto1_Cams\Slave3.X\ADC.c
+7B text3 CODE >63:C:\Users\camil\Desktop\UVG\2021\Electrónica Digital 2\MiniProyecto1_Cams\MiniProyecto1_Cams\Slave3.X\ADC.c
+7F text3 CODE >64:C:\Users\camil\Desktop\UVG\2021\Electrónica Digital 2\MiniProyecto1_Cams\MiniProyecto1_Cams\Slave3.X\ADC.c
+80 text3 CODE >66:C:\Users\camil\Desktop\UVG\2021\Electrónica Digital 2\MiniProyecto1_Cams\MiniProyecto1_Cams\Slave3.X\ADC.c
+84 text3 CODE >67:C:\Users\camil\Desktop\UVG\2021\Electrónica Digital 2\MiniProyecto1_Cams\MiniProyecto1_Cams\Slave3.X\ADC.c
+85 text3 CODE >69:C:\Users\camil\Desktop\UVG\2021\Electrónica Digital 2\MiniProyecto1_Cams\MiniProyecto1_Cams\Slave3.X\ADC.c
+89 text3 CODE >70:C:\Users\camil\Desktop\UVG\2021\Electrónica Digital 2\MiniProyecto1_Cams\MiniProyecto1_Cams\Slave3.X\ADC.c
+8A text3 CODE >72:C:\Users\camil\Desktop\UVG\2021\Electrónica Digital 2\MiniProyecto1_Cams\MiniProyecto1_Cams\Slave3.X\ADC.c
+8E text3 CODE >73:C:\Users\camil\Desktop\UVG\2021\Electrónica Digital 2\MiniProyecto1_Cams\MiniProyecto1_Cams\Slave3.X\ADC.c
+8F text3 CODE >75:C:\Users\camil\Desktop\UVG\2021\Electrónica Digital 2\MiniProyecto1_Cams\MiniProyecto1_Cams\Slave3.X\ADC.c
+91 text3 CODE >76:C:\Users\camil\Desktop\UVG\2021\Electrónica Digital 2\MiniProyecto1_Cams\MiniProyecto1_Cams\Slave3.X\ADC.c
+92 text3 CODE >78:C:\Users\camil\Desktop\UVG\2021\Electrónica Digital 2\MiniProyecto1_Cams\MiniProyecto1_Cams\Slave3.X\ADC.c
+96 text3 CODE >79:C:\Users\camil\Desktop\UVG\2021\Electrónica Digital 2\MiniProyecto1_Cams\MiniProyecto1_Cams\Slave3.X\ADC.c
+97 text3 CODE >80:C:\Users\camil\Desktop\UVG\2021\Electrónica Digital 2\MiniProyecto1_Cams\MiniProyecto1_Cams\Slave3.X\ADC.c
+D1 text3 CODE >83:C:\Users\camil\Desktop\UVG\2021\Electrónica Digital 2\MiniProyecto1_Cams\MiniProyecto1_Cams\Slave3.X\ADC.c
+D1 text3 CODE >84:C:\Users\camil\Desktop\UVG\2021\Electrónica Digital 2\MiniProyecto1_Cams\MiniProyecto1_Cams\Slave3.X\ADC.c
+D4 text3 CODE >85:C:\Users\camil\Desktop\UVG\2021\Electrónica Digital 2\MiniProyecto1_Cams\MiniProyecto1_Cams\Slave3.X\ADC.c
+D5 text3 CODE >86:C:\Users\camil\Desktop\UVG\2021\Electrónica Digital 2\MiniProyecto1_Cams\MiniProyecto1_Cams\Slave3.X\ADC.c
+D5 text3 CODE >87:C:\Users\camil\Desktop\UVG\2021\Electrónica Digital 2\MiniProyecto1_Cams\MiniProyecto1_Cams\Slave3.X\ADC.c
+D8 text3 CODE >88:C:\Users\camil\Desktop\UVG\2021\Electrónica Digital 2\MiniProyecto1_Cams\MiniProyecto1_Cams\Slave3.X\ADC.c
+D9 text3 CODE >89:C:\Users\camil\Desktop\UVG\2021\Electrónica Digital 2\MiniProyecto1_Cams\MiniProyecto1_Cams\Slave3.X\ADC.c
+D9 text3 CODE >90:C:\Users\camil\Desktop\UVG\2021\Electrónica Digital 2\MiniProyecto1_Cams\MiniProyecto1_Cams\Slave3.X\ADC.c
+DC text3 CODE >91:C:\Users\camil\Desktop\UVG\2021\Electrónica Digital 2\MiniProyecto1_Cams\MiniProyecto1_Cams\Slave3.X\ADC.c
+DD text3 CODE >92:C:\Users\camil\Desktop\UVG\2021\Electrónica Digital 2\MiniProyecto1_Cams\MiniProyecto1_Cams\Slave3.X\ADC.c
+ED text3 CODE >95:C:\Users\camil\Desktop\UVG\2021\Electrónica Digital 2\MiniProyecto1_Cams\MiniProyecto1_Cams\Slave3.X\ADC.c
+ED text3 CODE >96:C:\Users\camil\Desktop\UVG\2021\Electrónica Digital 2\MiniProyecto1_Cams\MiniProyecto1_Cams\Slave3.X\ADC.c
+EE text3 CODE >97:C:\Users\camil\Desktop\UVG\2021\Electrónica Digital 2\MiniProyecto1_Cams\MiniProyecto1_Cams\Slave3.X\ADC.c
+EF text3 CODE >98:C:\Users\camil\Desktop\UVG\2021\Electrónica Digital 2\MiniProyecto1_Cams\MiniProyecto1_Cams\Slave3.X\ADC.c
+F0 text3 CODE >99:C:\Users\camil\Desktop\UVG\2021\Electrónica Digital 2\MiniProyecto1_Cams\MiniProyecto1_Cams\Slave3.X\ADC.c
+F0 text3 CODE >100:C:\Users\camil\Desktop\UVG\2021\Electrónica Digital 2\MiniProyecto1_Cams\MiniProyecto1_Cams\Slave3.X\ADC.c
+F1 text3 CODE >101:C:\Users\camil\Desktop\UVG\2021\Electrónica Digital 2\MiniProyecto1_Cams\MiniProyecto1_Cams\Slave3.X\ADC.c
+F2 text3 CODE >102:C:\Users\camil\Desktop\UVG\2021\Electrónica Digital 2\MiniProyecto1_Cams\MiniProyecto1_Cams\Slave3.X\ADC.c
+F3 text3 CODE >103:C:\Users\camil\Desktop\UVG\2021\Electrónica Digital 2\MiniProyecto1_Cams\MiniProyecto1_Cams\Slave3.X\ADC.c
+F3 text3 CODE >104:C:\Users\camil\Desktop\UVG\2021\Electrónica Digital 2\MiniProyecto1_Cams\MiniProyecto1_Cams\Slave3.X\ADC.c
+F4 text3 CODE >105:C:\Users\camil\Desktop\UVG\2021\Electrónica Digital 2\MiniProyecto1_Cams\MiniProyecto1_Cams\Slave3.X\ADC.c
+F5 text3 CODE >106:C:\Users\camil\Desktop\UVG\2021\Electrónica Digital 2\MiniProyecto1_Cams\MiniProyecto1_Cams\Slave3.X\ADC.c
+F6 text3 CODE >107:C:\Users\camil\Desktop\UVG\2021\Electrónica Digital 2\MiniProyecto1_Cams\MiniProyecto1_Cams\Slave3.X\ADC.c
+F6 text3 CODE >108:C:\Users\camil\Desktop\UVG\2021\Electrónica Digital 2\MiniProyecto1_Cams\MiniProyecto1_Cams\Slave3.X\ADC.c
+F7 text3 CODE >109:C:\Users\camil\Desktop\UVG\2021\Electrónica Digital 2\MiniProyecto1_Cams\MiniProyecto1_Cams\Slave3.X\ADC.c
+F8 text3 CODE >110:C:\Users\camil\Desktop\UVG\2021\Electrónica Digital 2\MiniProyecto1_Cams\MiniProyecto1_Cams\Slave3.X\ADC.c
+F9 text3 CODE >111:C:\Users\camil\Desktop\UVG\2021\Electrónica Digital 2\MiniProyecto1_Cams\MiniProyecto1_Cams\Slave3.X\ADC.c
+F9 text3 CODE >112:C:\Users\camil\Desktop\UVG\2021\Electrónica Digital 2\MiniProyecto1_Cams\MiniProyecto1_Cams\Slave3.X\ADC.c
+FA text3 CODE >113:C:\Users\camil\Desktop\UVG\2021\Electrónica Digital 2\MiniProyecto1_Cams\MiniProyecto1_Cams\Slave3.X\ADC.c
+FB text3 CODE >114:C:\Users\camil\Desktop\UVG\2021\Electrónica Digital 2\MiniProyecto1_Cams\MiniProyecto1_Cams\Slave3.X\ADC.c
+FC text3 CODE >115:C:\Users\camil\Desktop\UVG\2021\Electrónica Digital 2\MiniProyecto1_Cams\MiniProyecto1_Cams\Slave3.X\ADC.c
+112 text3 CODE >117:C:\Users\camil\Desktop\UVG\2021\Electrónica Digital 2\MiniProyecto1_Cams\MiniProyecto1_Cams\Slave3.X\ADC.c
+115 text3 CODE >118:C:\Users\camil\Desktop\UVG\2021\Electrónica Digital 2\MiniProyecto1_Cams\MiniProyecto1_Cams\Slave3.X\ADC.c
+118 text3 CODE >119:C:\Users\camil\Desktop\UVG\2021\Electrónica Digital 2\MiniProyecto1_Cams\MiniProyecto1_Cams\Slave3.X\ADC.c
+11B text3 CODE >120:C:\Users\camil\Desktop\UVG\2021\Electrónica Digital 2\MiniProyecto1_Cams\MiniProyecto1_Cams\Slave3.X\ADC.c
+175 text2 CODE >79:C:\Users\camil\Desktop\UVG\2021\Electrónica Digital 2\MiniProyecto1_Cams\MiniProyecto1_Cams\Slave3.X\mains3.c
+175 text2 CODE >81:C:\Users\camil\Desktop\UVG\2021\Electrónica Digital 2\MiniProyecto1_Cams\MiniProyecto1_Cams\Slave3.X\mains3.c
+178 text2 CODE >82:C:\Users\camil\Desktop\UVG\2021\Electrónica Digital 2\MiniProyecto1_Cams\MiniProyecto1_Cams\Slave3.X\mains3.c
+179 text2 CODE >83:C:\Users\camil\Desktop\UVG\2021\Electrónica Digital 2\MiniProyecto1_Cams\MiniProyecto1_Cams\Slave3.X\mains3.c
+17A text2 CODE >85:C:\Users\camil\Desktop\UVG\2021\Electrónica Digital 2\MiniProyecto1_Cams\MiniProyecto1_Cams\Slave3.X\mains3.c
+17B text2 CODE >86:C:\Users\camil\Desktop\UVG\2021\Electrónica Digital 2\MiniProyecto1_Cams\MiniProyecto1_Cams\Slave3.X\mains3.c
+17E text2 CODE >87:C:\Users\camil\Desktop\UVG\2021\Electrónica Digital 2\MiniProyecto1_Cams\MiniProyecto1_Cams\Slave3.X\mains3.c
+181 text2 CODE >88:C:\Users\camil\Desktop\UVG\2021\Electrónica Digital 2\MiniProyecto1_Cams\MiniProyecto1_Cams\Slave3.X\mains3.c
+182 text2 CODE >89:C:\Users\camil\Desktop\UVG\2021\Electrónica Digital 2\MiniProyecto1_Cams\MiniProyecto1_Cams\Slave3.X\mains3.c
+183 text2 CODE >90:C:\Users\camil\Desktop\UVG\2021\Electrónica Digital 2\MiniProyecto1_Cams\MiniProyecto1_Cams\Slave3.X\mains3.c
+184 text2 CODE >91:C:\Users\camil\Desktop\UVG\2021\Electrónica Digital 2\MiniProyecto1_Cams\MiniProyecto1_Cams\Slave3.X\mains3.c
+185 text2 CODE >92:C:\Users\camil\Desktop\UVG\2021\Electrónica Digital 2\MiniProyecto1_Cams\MiniProyecto1_Cams\Slave3.X\mains3.c
+188 text2 CODE >93:C:\Users\camil\Desktop\UVG\2021\Electrónica Digital 2\MiniProyecto1_Cams\MiniProyecto1_Cams\Slave3.X\mains3.c
+189 text2 CODE >94:C:\Users\camil\Desktop\UVG\2021\Electrónica Digital 2\MiniProyecto1_Cams\MiniProyecto1_Cams\Slave3.X\mains3.c
+18A text2 CODE >95:C:\Users\camil\Desktop\UVG\2021\Electrónica Digital 2\MiniProyecto1_Cams\MiniProyecto1_Cams\Slave3.X\mains3.c
+18B text2 CODE >96:C:\Users\camil\Desktop\UVG\2021\Electrónica Digital 2\MiniProyecto1_Cams\MiniProyecto1_Cams\Slave3.X\mains3.c
+18E text2 CODE >97:C:\Users\camil\Desktop\UVG\2021\Electrónica Digital 2\MiniProyecto1_Cams\MiniProyecto1_Cams\Slave3.X\mains3.c
+191 text2 CODE >98:C:\Users\camil\Desktop\UVG\2021\Electrónica Digital 2\MiniProyecto1_Cams\MiniProyecto1_Cams\Slave3.X\mains3.c
+14B text1 CODE >106:C:\Users\camil\Desktop\UVG\2021\Electrónica Digital 2\MiniProyecto1_Cams\MiniProyecto1_Cams\Slave3.X\mains3.c
+14B text1 CODE >107:C:\Users\camil\Desktop\UVG\2021\Electrónica Digital 2\MiniProyecto1_Cams\MiniProyecto1_Cams\Slave3.X\mains3.c
+151 text1 CODE >108:C:\Users\camil\Desktop\UVG\2021\Electrónica Digital 2\MiniProyecto1_Cams\MiniProyecto1_Cams\Slave3.X\mains3.c
+154 text1 CODE >109:C:\Users\camil\Desktop\UVG\2021\Electrónica Digital 2\MiniProyecto1_Cams\MiniProyecto1_Cams\Slave3.X\mains3.c
+155 text1 CODE >110:C:\Users\camil\Desktop\UVG\2021\Electrónica Digital 2\MiniProyecto1_Cams\MiniProyecto1_Cams\Slave3.X\mains3.c
+156 text1 CODE >111:C:\Users\camil\Desktop\UVG\2021\Electrónica Digital 2\MiniProyecto1_Cams\MiniProyecto1_Cams\Slave3.X\mains3.c
+157 text1 CODE >112:C:\Users\camil\Desktop\UVG\2021\Electrónica Digital 2\MiniProyecto1_Cams\MiniProyecto1_Cams\Slave3.X\mains3.c
+163 text1 CODE >113:C:\Users\camil\Desktop\UVG\2021\Electrónica Digital 2\MiniProyecto1_Cams\MiniProyecto1_Cams\Slave3.X\mains3.c
+166 text1 CODE >114:C:\Users\camil\Desktop\UVG\2021\Electrónica Digital 2\MiniProyecto1_Cams\MiniProyecto1_Cams\Slave3.X\mains3.c
+167 text1 CODE >115:C:\Users\camil\Desktop\UVG\2021\Electrónica Digital 2\MiniProyecto1_Cams\MiniProyecto1_Cams\Slave3.X\mains3.c
+168 text1 CODE >116:C:\Users\camil\Desktop\UVG\2021\Electrónica Digital 2\MiniProyecto1_Cams\MiniProyecto1_Cams\Slave3.X\mains3.c
+169 text1 CODE >117:C:\Users\camil\Desktop\UVG\2021\Electrónica Digital 2\MiniProyecto1_Cams\MiniProyecto1_Cams\Slave3.X\mains3.c
+16F text1 CODE >118:C:\Users\camil\Desktop\UVG\2021\Electrónica Digital 2\MiniProyecto1_Cams\MiniProyecto1_Cams\Slave3.X\mains3.c
+172 text1 CODE >119:C:\Users\camil\Desktop\UVG\2021\Electrónica Digital 2\MiniProyecto1_Cams\MiniProyecto1_Cams\Slave3.X\mains3.c
+173 text1 CODE >120:C:\Users\camil\Desktop\UVG\2021\Electrónica Digital 2\MiniProyecto1_Cams\MiniProyecto1_Cams\Slave3.X\mains3.c
+174 text1 CODE >122:C:\Users\camil\Desktop\UVG\2021\Electrónica Digital 2\MiniProyecto1_Cams\MiniProyecto1_Cams\Slave3.X\mains3.c
+11C maintext CODE >59:C:\Users\camil\Desktop\UVG\2021\Electrónica Digital 2\MiniProyecto1_Cams\MiniProyecto1_Cams\Slave3.X\mains3.c
+11C maintext CODE >60:C:\Users\camil\Desktop\UVG\2021\Electrónica Digital 2\MiniProyecto1_Cams\MiniProyecto1_Cams\Slave3.X\mains3.c
+121 maintext CODE >61:C:\Users\camil\Desktop\UVG\2021\Electrónica Digital 2\MiniProyecto1_Cams\MiniProyecto1_Cams\Slave3.X\mains3.c
+12F maintext CODE >63:C:\Users\camil\Desktop\UVG\2021\Electrónica Digital 2\MiniProyecto1_Cams\MiniProyecto1_Cams\Slave3.X\mains3.c
+131 maintext CODE >66:C:\Users\camil\Desktop\UVG\2021\Electrónica Digital 2\MiniProyecto1_Cams\MiniProyecto1_Cams\Slave3.X\mains3.c
+136 maintext CODE >67:C:\Users\camil\Desktop\UVG\2021\Electrónica Digital 2\MiniProyecto1_Cams\MiniProyecto1_Cams\Slave3.X\mains3.c
+13E maintext CODE >68:C:\Users\camil\Desktop\UVG\2021\Electrónica Digital 2\MiniProyecto1_Cams\MiniProyecto1_Cams\Slave3.X\mains3.c
+13F maintext CODE >69:C:\Users\camil\Desktop\UVG\2021\Electrónica Digital 2\MiniProyecto1_Cams\MiniProyecto1_Cams\Slave3.X\mains3.c
+142 maintext CODE >71:C:\Users\camil\Desktop\UVG\2021\Electrónica Digital 2\MiniProyecto1_Cams\MiniProyecto1_Cams\Slave3.X\mains3.c
 # %SYMTAB Section
 # An enumeration of all symbols in the program.
 # The beginning of the section is indicated by %SYMTAB.
@@ -225,7 +236,7 @@ FC text2 CODE >115:C:\Users\camil\Desktop\UVG\2021\Electrónica Digital 2\MiniPro
 # is the name of the object file in which the symbol was defined.
 %SYMTAB
 ___latbits 2 0 ABS 0 - dist/default/production\Slave3.X.production.o
-__Hspace_0 186 0 ABS 0 - -
+__Hspace_0 1A6 0 ABS 0 - -
 __Hspace_1 7B 0 ABS 0 - -
 __Hspace_2 0 0 ABS 0 - -
 __Hspace_3 0 0 ABS 0 - -
@@ -233,21 +244,21 @@ __Hspace_4 4010 0 ABS 0 - -
 __Heeprom_data 0 0 EEDATA 3 eeprom_data -
 __Hstrings 0 0 ABS 0 strings -
 _TMR0 1 0 ABS 0 - dist/default/production\Slave3.X.production.o
-___sp 0 0 STACK 2 stack C:\Users\camil\AppData\Local\Temp\s660.o
+___sp 0 0 STACK 2 stack C:\Users\camil\AppData\Local\Temp\sgkg.o
 _main 238 0 CODE 0 maintext dist/default/production\Slave3.X.production.o
 btemp 7E 0 ABS 0 - dist/default/production\Slave3.X.production.o
-start 18 0 CODE 0 init C:\Users\camil\AppData\Local\Temp\s660.o
+start 18 0 CODE 0 init C:\Users\camil\AppData\Local\Temp\sgkg.o
 __size_of_main 0 0 ABS 0 - dist/default/production\Slave3.X.production.o
 __HbssCOMMON 0 0 ABS 0 bssCOMMON -
 _ADC_cflag 7A 0 COMMON 1 bssCOMMON dist/default/production\Slave3.X.production.o
 __Hpowerup 0 0 CODE 0 powerup -
 __size_of_ADC_init 0 0 ABS 0 - dist/default/production\Slave3.X.production.o
-intlevel0 0 0 ENTRY 0 functab C:\Users\camil\AppData\Local\Temp\s660.o
-intlevel1 0 0 ENTRY 0 functab C:\Users\camil\AppData\Local\Temp\s660.o
-intlevel2 0 0 ENTRY 0 functab C:\Users\camil\AppData\Local\Temp\s660.o
-intlevel3 0 0 ENTRY 0 functab C:\Users\camil\AppData\Local\Temp\s660.o
-intlevel4 0 0 ENTRY 0 functab C:\Users\camil\AppData\Local\Temp\s660.o
-intlevel5 0 0 ENTRY 0 functab C:\Users\camil\AppData\Local\Temp\s660.o
+intlevel0 0 0 ENTRY 0 functab C:\Users\camil\AppData\Local\Temp\sgkg.o
+intlevel1 0 0 ENTRY 0 functab C:\Users\camil\AppData\Local\Temp\sgkg.o
+intlevel2 0 0 ENTRY 0 functab C:\Users\camil\AppData\Local\Temp\sgkg.o
+intlevel3 0 0 ENTRY 0 functab C:\Users\camil\AppData\Local\Temp\sgkg.o
+intlevel4 0 0 ENTRY 0 functab C:\Users\camil\AppData\Local\Temp\sgkg.o
+intlevel5 0 0 ENTRY 0 functab C:\Users\camil\AppData\Local\Temp\sgkg.o
 __LbssCOMMON 0 0 ABS 0 bssCOMMON -
 wtemp0 7E 0 ABS 0 - dist/default/production\Slave3.X.production.o
 __Hfunctab 0 0 ENTRY 0 functab -
@@ -255,18 +266,18 @@ __Hclrtext 0 0 ABS 0 clrtext -
 ADC_init@Channel 73 0 COMMON 1 cstackCOMMON dist/default/production\Slave3.X.production.o
 _ADRESH 1E 0 ABS 0 - dist/default/production\Slave3.X.production.o
 _ANSELH 189 0 ABS 0 - dist/default/production\Slave3.X.production.o
+__size_of_thermometer 0 0 ABS 0 - dist/default/production\Slave3.X.production.o
 __Lmaintext 0 0 ABS 0 maintext -
 ADC_init@ADCSbit 78 0 COMMON 1 cstackCOMMON dist/default/production\Slave3.X.production.o
-_ADC_init 2A 0 CODE 0 text2 dist/default/production\Slave3.X.production.o
-__end_of_ADC_init 238 0 CODE 0 text2 dist/default/production\Slave3.X.production.o
-___stackhi 0 0 ABS 0 - C:\Users\camil\AppData\Local\Temp\s660.o
-___stacklo 0 0 ABS 0 - C:\Users\camil\AppData\Local\Temp\s660.o
+_ADC_init 2A 0 CODE 0 text3 dist/default/production\Slave3.X.production.o
+__end_of_ADC_init 238 0 CODE 0 text3 dist/default/production\Slave3.X.production.o
+___stackhi 0 0 ABS 0 - C:\Users\camil\AppData\Local\Temp\sgkg.o
+___stacklo 0 0 ABS 0 - C:\Users\camil\AppData\Local\Temp\sgkg.o
 __size_of_setup 0 0 ABS 0 - dist/default/production\Slave3.X.production.o
 start_initialization 1E 0 CODE 0 cinit dist/default/production\Slave3.X.production.o
 _TRISAbits 85 0 ABS 0 - dist/default/production\Slave3.X.production.o
-_TRISBbits 86 0 ABS 0 - dist/default/production\Slave3.X.production.o
 __pcstackBANK0 20 0 BANK0 1 cstackBANK0 dist/default/production\Slave3.X.production.o
-___int_sp 0 0 STACK 2 stack C:\Users\camil\AppData\Local\Temp\s660.o
+___int_sp 0 0 STACK 2 stack C:\Users\camil\AppData\Local\Temp\sgkg.o
 __Hbank0 0 0 ABS 0 bank0 -
 __Hbank1 0 0 ABS 0 bank1 -
 __Hbank2 0 0 ABS 0 bank2 -
@@ -301,15 +312,19 @@ __Lsfr3 0 0 ABS 0 sfr3 -
 __Ltext 0 0 ABS 0 text -
 __LcstackBANK0 0 0 ABS 0 cstackBANK0 -
 __HcstackCOMMON 0 0 ABS 0 cstackCOMMON -
-__S0 186 0 ABS 0 - -
+_RD0 40 0 ABS 0 - dist/default/production\Slave3.X.production.o
+_RD1 41 0 ABS 0 - dist/default/production\Slave3.X.production.o
+_RD2 42 0 ABS 0 - dist/default/production\Slave3.X.production.o
+__S0 1A6 0 ABS 0 - -
 __S1 7B 0 ABS 0 - -
 __S2 0 0 ABS 0 - -
 __S3 0 0 ABS 0 - -
-_isr 2E4 0 CODE 0 text3 dist/default/production\Slave3.X.production.o
+_isr 324 0 CODE 0 text4 dist/default/production\Slave3.X.production.o
 saved_w 7E 0 ABS 0 - dist/default/production\Slave3.X.production.o
-__end_of_isr 30C 0 CODE 0 text3 dist/default/production\Slave3.X.production.o
+__end_of_isr 34C 0 CODE 0 text4 dist/default/production\Slave3.X.production.o
 __Lintentry 8 0 CODE 0 intentry -
-reset_vec 0 0 CODE 0 reset_vec C:\Users\camil\AppData\Local\Temp\s660.o
+reset_vec 0 0 CODE 0 reset_vec C:\Users\camil\AppData\Local\Temp\sgkg.o
+_thermometer 296 0 CODE 0 text1 dist/default/production\Slave3.X.production.o
 _PIE1bits 8C 0 ABS 0 - dist/default/production\Slave3.X.production.o
 __pmaintext 238 0 CODE 0 maintext dist/default/production\Slave3.X.production.o
 __Lcommon 0 0 ABS 0 common -
@@ -331,8 +346,9 @@ __Hintentry 18 0 CODE 0 intentry -
 __Lstrings 0 0 ABS 0 strings -
 __Hreset_vec 6 0 CODE 0 reset_vec -
 __ptext1 296 0 CODE 0 text1 dist/default/production\Slave3.X.production.o
-__ptext2 2A 0 CODE 0 text2 dist/default/production\Slave3.X.production.o
-__ptext3 2E4 0 CODE 0 text3 dist/default/production\Slave3.X.production.o
+__ptext2 2EA 0 CODE 0 text2 dist/default/production\Slave3.X.production.o
+__ptext3 2A 0 CODE 0 text3 dist/default/production\Slave3.X.production.o
+__ptext4 324 0 CODE 0 text4 dist/default/production\Slave3.X.production.o
 __Lpowerup 0 0 CODE 0 powerup -
 __Leeprom_data 0 0 EEDATA 3 eeprom_data -
 __Lreset_vec 0 0 CODE 0 reset_vec -
@@ -352,16 +368,16 @@ _TRISA 85 0 ABS 0 - dist/default/production\Slave3.X.production.o
 _TRISB 86 0 ABS 0 - dist/default/production\Slave3.X.production.o
 _TRISC 87 0 ABS 0 - dist/default/production\Slave3.X.production.o
 _TRISD 88 0 ABS 0 - dist/default/production\Slave3.X.production.o
-__end_of_setup 2E4 0 CODE 0 text1 dist/default/production\Slave3.X.production.o
+__end_of_setup 324 0 CODE 0 text2 dist/default/production\Slave3.X.production.o
 __Hram 0 0 ABS 0 ram -
 __Lram 0 0 ABS 0 ram -
 interrupt_function 8 0 CODE 0 intentry dist/default/production\Slave3.X.production.o
 ADC_init@Vref 75 0 COMMON 1 cstackCOMMON dist/default/production\Slave3.X.production.o
-_IOCBbits 96 0 ABS 0 - dist/default/production\Slave3.X.production.o
-_setup 296 0 CODE 0 text1 dist/default/production\Slave3.X.production.o
+_setup 2EA 0 CODE 0 text2 dist/default/production\Slave3.X.production.o
 __pintentry 8 0 CODE 0 intentry dist/default/production\Slave3.X.production.o
 __size_of_isr 0 0 ABS 0 - dist/default/production\Slave3.X.production.o
 __initialization 1E 0 CODE 0 cinit dist/default/production\Slave3.X.production.o
+__end_of_thermometer 2EA 0 CODE 0 text1 dist/default/production\Slave3.X.production.o
 # %SPLITSTAB Section
 # This section enumerates all the psect splits performed by the assembler.
 # The beginning of the section is indicated by %SPLITSTAB.
@@ -389,7 +405,7 @@ __initialization 1E 0 CODE 0 cinit dist/default/production\Slave3.X.production.o
 %SEGMENTS
 cstackCOMMON 1 70 70 B 1
 cstackBANK0 1 20 20 1 1
-intentry 0 4 8 182 2
+intentry 0 4 8 1A2 2
 reset_vec 0 0 0 3 2
 # %NOTES Section
 # This section contains data of all the note-psects.  The beginning of the section

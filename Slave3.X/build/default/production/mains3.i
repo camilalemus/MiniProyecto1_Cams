@@ -2651,14 +2651,7 @@ typedef uint16_t uintptr_t;
 # 26 "./ADC.h"
 void ADC_init(uint8_t ADCSbit,uint8_t Channel, uint8_t Justified, uint8_t Vref);
 # 33 "mains3.c" 2
-
-
-
-
-
-
-
-
+# 45 "mains3.c"
 uint8_t ADC_cflag;
 uint8_t ADC_analogvalue;
 
@@ -2667,6 +2660,7 @@ uint8_t ADC_analogvalue;
 
 
 void setup(void);
+void thermometer(void);
 
 
 
@@ -2674,16 +2668,17 @@ void setup(void);
 
 void main(void) {
     setup();
-    ADC_init(1, 2, 0, 1);
+    ADC_init(1, 0, 0, 4);
 
     ADC_cflag = 1;
     while (1) {
-        PORTC = ADC_analogvalue;
+
         if (ADC_cflag == 1) {
             _delay((unsigned long)((500)*((8000000)/4000000.0)));
             ADC_cflag = 0;
             ADCON0bits.GO = 1;
         }
+        thermometer();
     }
 }
 
@@ -2695,30 +2690,51 @@ void setup(){
 
     ANSEL = 0;
     ANSELH = 0;
-    ANSELbits.ANS2 = 1;
+    ANSELbits.ANS0 = 1;
 
     INTCONbits.GIE = 1;
     TMR0 = 0;
     TRISA = 0;
-    TRISAbits.TRISA2 = 1;
+    TRISAbits.TRISA0 = 1;
     TRISC = 0;
     TRISD = 0;
     TRISB = 0;
     PORTC = 0;
     PORTD = 0;
-    TRISBbits.TRISB1 = 1;
-    TRISBbits.TRISB0 = 1;
     INTCONbits.PEIE = 1;
-    INTCONbits.RBIE = 1;
-    IOCBbits.IOCB0 = 1;
-    IOCBbits.IOCB1 = 1;
-    INTCONbits.RBIF = 0;
-
     PIR1bits.ADIF = 0;
     PIE1bits.ADIE = 1;
     ADCON0bits.ADON = 1;
 }
-# 109 "mains3.c"
+
+
+
+
+
+
+
+void thermometer(){
+    if (ADC_analogvalue < 99){
+        RD0 = 0;
+        RD1 = 0;
+        RD2 = 1;
+        }
+    else if ((113 > ADC_analogvalue) & (ADC_analogvalue > 99)){
+        RD0 = 0;
+        RD1 = 1;
+        RD2 = 0;
+        }
+    else if (ADC_analogvalue > 113){
+        RD0 = 1;
+        RD1 = 0;
+        RD2 = 0;
+    }
+}
+
+
+
+
+
 void __attribute__((picinterrupt(("")))) isr(void) {
     if(PIR1bits.ADIF == 1){
         ADC_analogvalue = ADRESH;
