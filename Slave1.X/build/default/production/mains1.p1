@@ -174,6 +174,15 @@ Version 4.0 HI-TECH Software Intermediate Code
 "1238 C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f887.h
 [; ;C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f887.h: 1238: extern volatile unsigned char ADRESH __attribute__((address(0x01E)));
 [v _ADRESH `Vuc ~T0 @X0 0 e@30 ]
+"4277
+[; ;C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f887.h: 4277: extern volatile __bit SSPIF __attribute__((address(0x63)));
+[v _SSPIF `Vb ~T0 @X0 0 e@99 ]
+"49 ./SPI.h
+[; ;./SPI.h: 49: char spiRead();
+[v _spiRead `(uc ~T0 @X0 0 e? ]
+"47
+[; ;./SPI.h: 47: void spiWrite(char);
+[v _spiWrite `(v ~T0 @X0 0 ef1`uc ]
 "13 mains1.c
 [p x FOSC  =  INTRC_NOCLKOUT ]
 "14
@@ -581,7 +590,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e :U _isr ]
 [f ]
 "115
-[; ;mains1.c: 115:     if(PIR1bits.ADIF == 1){
+[; ;mains1.c: 115:     if (PIR1bits.ADIF == 1) {
 [e $ ! == -> . . _PIR1bits 0 6 `i -> 1 `i 145  ]
 {
 "116
@@ -598,6 +607,23 @@ Version 4.0 HI-TECH Software Intermediate Code
 }
 [e :U 145 ]
 "120
-[; ;mains1.c: 120: }
+[; ;mains1.c: 120:     if (SSPIF == 1) {
+[e $ ! == -> _SSPIF `i -> 1 `i 146  ]
+{
+"121
+[; ;mains1.c: 121:         spiRead();
+[e ( _spiRead ..  ]
+"122
+[; ;mains1.c: 122:         spiWrite(ADC_analogvalue);
+[e ( _spiWrite (1 -> _ADC_analogvalue `uc ]
+"123
+[; ;mains1.c: 123:         SSPIF = 0;
+[e = _SSPIF -> -> 0 `i `b ]
+"124
+[; ;mains1.c: 124:     }
+}
+[e :U 146 ]
+"125
+[; ;mains1.c: 125: }
 [e :UE 144 ]
 }

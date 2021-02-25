@@ -63,6 +63,10 @@ SPI_ACTIVE_2_IDLE 64
 [v _spiInit spiInit `(v  1 e 1 0 ]
 "29
 [v _spiReceiveWait spiReceiveWait `(v  1 s 1 spiReceiveWait ]
+"34
+[v _spiWrite spiWrite `(v  1 e 1 0 ]
+"47
+[v _spiRead spiRead `(uc  1 e 1 0 ]
 [s S284 . 1 `uc 1 RB0 1 0 :1:0 
 `uc 1 RB1 1 0 :1:1 
 `uc 1 RB2 1 0 :1:2 
@@ -191,7 +195,7 @@ SPI_ACTIVE_2_IDLE 64
 [v _PIE1bits PIE1bits `VES203  1 e 1 @140 ]
 "2177
 [v _SSPSTAT SSPSTAT `VEuc  1 e 1 @148 ]
-[s S410 . 1 `uc 1 BF 1 0 :1:0 
+[s S420 . 1 `uc 1 BF 1 0 :1:0 
 `uc 1 UA 1 0 :1:1 
 `uc 1 R_nW 1 0 :1:2 
 `uc 1 S 1 0 :1:3 
@@ -201,39 +205,39 @@ SPI_ACTIVE_2_IDLE 64
 `uc 1 SMP 1 0 :1:7 
 ]
 "2231
-[s S419 . 1 `uc 1 . 1 0 :2:0 
+[s S429 . 1 `uc 1 . 1 0 :2:0 
 `uc 1 R 1 0 :1:2 
 `uc 1 . 1 0 :2:3 
 `uc 1 D 1 0 :1:5 
 ]
-[s S424 . 1 `uc 1 . 1 0 :2:0 
+[s S434 . 1 `uc 1 . 1 0 :2:0 
 `uc 1 I2C_READ 1 0 :1:2 
 `uc 1 I2C_START 1 0 :1:3 
 `uc 1 I2C_STOP 1 0 :1:4 
 `uc 1 I2C_DATA 1 0 :1:5 
 ]
-[s S430 . 1 `uc 1 . 1 0 :2:0 
+[s S440 . 1 `uc 1 . 1 0 :2:0 
 `uc 1 nW 1 0 :1:2 
 `uc 1 . 1 0 :2:3 
 `uc 1 nA 1 0 :1:5 
 ]
-[s S435 . 1 `uc 1 . 1 0 :2:0 
+[s S445 . 1 `uc 1 . 1 0 :2:0 
 `uc 1 nWRITE 1 0 :1:2 
 `uc 1 . 1 0 :2:3 
 `uc 1 nADDRESS 1 0 :1:5 
 ]
-[s S440 . 1 `uc 1 . 1 0 :2:0 
+[s S450 . 1 `uc 1 . 1 0 :2:0 
 `uc 1 R_W 1 0 :1:2 
 `uc 1 . 1 0 :2:3 
 `uc 1 D_A 1 0 :1:5 
 ]
-[s S445 . 1 `uc 1 . 1 0 :2:0 
+[s S455 . 1 `uc 1 . 1 0 :2:0 
 `uc 1 READ_WRITE 1 0 :1:2 
 `uc 1 . 1 0 :2:3 
 `uc 1 DATA_ADDRESS 1 0 :1:5 
 ]
-[u S450 . 1 `S410 1 . 1 0 `S419 1 . 1 0 `S424 1 . 1 0 `S430 1 . 1 0 `S435 1 . 1 0 `S440 1 . 1 0 `S445 1 . 1 0 ]
-[v _SSPSTATbits SSPSTATbits `VES450  1 e 1 @148 ]
+[u S460 . 1 `S420 1 . 1 0 `S429 1 . 1 0 `S434 1 . 1 0 `S440 1 . 1 0 `S445 1 . 1 0 `S450 1 . 1 0 `S455 1 . 1 0 ]
+[v _SSPSTATbits SSPSTATbits `VES460  1 e 1 @148 ]
 [s S150 . 1 `uc 1 IOCB 1 0 :8:0 
 ]
 "2436
@@ -264,6 +268,8 @@ SPI_ACTIVE_2_IDLE 64
 [v _ANSELbits ANSELbits `VES37  1 e 1 @392 ]
 "3449
 [v _ANSELH ANSELH `VEuc  1 e 1 @393 ]
+"4277
+[v _SSPIF SSPIF `VEb  1 e 0 @99 ]
 "4457
 [v _TRISC3 TRISC3 `VEb  1 e 0 @1083 ]
 "4463
@@ -283,15 +289,34 @@ SPI_ACTIVE_2_IDLE 64
 {
 [v spiInit@sType sType `E1264  1 a 1 wreg ]
 [v spiInit@sType sType `E1264  1 a 1 wreg ]
-[v spiInit@sDataSample sDataSample `E1272  1 p 1 3 ]
-[v spiInit@sClockIdle sClockIdle `E1276  1 p 1 4 ]
-[v spiInit@sTransmitEdge sTransmitEdge `E1280  1 p 1 5 ]
+[v spiInit@sDataSample sDataSample `E1272  1 p 1 4 ]
+[v spiInit@sClockIdle sClockIdle `E1276  1 p 1 5 ]
+[v spiInit@sTransmitEdge sTransmitEdge `E1280  1 p 1 6 ]
 "14
-[v spiInit@sType sType `E1264  1 a 1 6 ]
+[v spiInit@sType sType `E1264  1 a 1 7 ]
 "27
 } 0
 "100 C:\Users\camil\Desktop\UVG\2021\Electrónica Digital 2\MiniProyecto1_Cams\MiniProyecto1_Cams\Slave2.X\mains2.c
 [v _isr isr `II(v  1 e 1 0 ]
 {
-"110
+"115
+} 0
+"34 C:\Users\camil\Desktop\UVG\2021\Electrónica Digital 2\MiniProyecto1_Cams\MiniProyecto1_Cams\Slave2.X\SPI.c
+[v _spiWrite spiWrite `(v  1 e 1 0 ]
+{
+[v spiWrite@dat dat `uc  1 a 1 wreg ]
+[v spiWrite@dat dat `uc  1 a 1 wreg ]
+"36
+[v spiWrite@dat dat `uc  1 a 1 0 ]
+"37
+} 0
+"47
+[v _spiRead spiRead `(uc  1 e 1 0 ]
+{
+"51
+} 0
+"29
+[v _spiReceiveWait spiReceiveWait `(v  1 s 1 spiReceiveWait ]
+{
+"32
 } 0

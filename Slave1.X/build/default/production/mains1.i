@@ -2761,9 +2761,14 @@ void setup(){
 }
 # 114 "mains1.c"
 void __attribute__((picinterrupt(("")))) isr(void) {
-    if(PIR1bits.ADIF == 1){
+    if (PIR1bits.ADIF == 1) {
         ADC_analogvalue = ADRESH;
         ADC_cflag = 1;
         PIR1bits.ADIF = 0;
+    }
+    if (SSPIF == 1) {
+        spiRead();
+        spiWrite(ADC_analogvalue);
+        SSPIF = 0;
     }
 }

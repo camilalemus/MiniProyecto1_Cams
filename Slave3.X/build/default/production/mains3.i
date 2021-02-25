@@ -2782,4 +2782,9 @@ void __attribute__((picinterrupt(("")))) isr(void) {
         ADC_cflag = 1;
         PIR1bits.ADIF = 0;
     }
+       if(SSPIF == 1){
+        spiRead();
+        spiWrite(ADC_analogvalue);
+        SSPIF = 0;
+    }
 }

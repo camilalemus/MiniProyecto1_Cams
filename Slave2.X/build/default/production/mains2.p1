@@ -172,6 +172,15 @@ Version 4.0 HI-TECH Software Intermediate Code
 "245
 [; ;C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f887.h: 245: extern volatile PORTBbits_t PORTBbits __attribute__((address(0x006)));
 [v _PORTBbits `VS7 ~T0 @X0 0 e@6 ]
+"4277
+[; ;C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f887.h: 4277: extern volatile __bit SSPIF __attribute__((address(0x63)));
+[v _SSPIF `Vb ~T0 @X0 0 e@99 ]
+"49 ./SPI.h
+[; ;./SPI.h: 49: char spiRead();
+[v _spiRead `(uc ~T0 @X0 0 e? ]
+"47
+[; ;./SPI.h: 47: void spiWrite(char);
+[v _spiWrite `(v ~T0 @X0 0 ef1`uc ]
 "13 mains2.c
 [p x FOSC  =  INTRC_NOCLKOUT ]
 "14
@@ -575,10 +584,27 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;mains2.c: 108:         INTCONbits.RBIF = 0;
 [e = . . _INTCONbits 0 0 -> -> 0 `i `uc ]
 "109
-[; ;mains2.c: 109:     }
+[; ;mains2.c: 109:         if (SSPIF == 1) {
+[e $ ! == -> _SSPIF `i -> 1 `i 148  ]
+{
+"110
+[; ;mains2.c: 110:             spiRead();
+[e ( _spiRead ..  ]
+"111
+[; ;mains2.c: 111:             spiWrite(PORTD);
+[e ( _spiWrite (1 -> _PORTD `uc ]
+"112
+[; ;mains2.c: 112:             SSPIF = 0;
+[e = _SSPIF -> -> 0 `i `b ]
+"113
+[; ;mains2.c: 113:         }
+}
+[e :U 148 ]
+"114
+[; ;mains2.c: 114:     }
 }
 [e :U 144 ]
-"110
-[; ;mains2.c: 110: }
+"115
+[; ;mains2.c: 115: }
 [e :UE 143 ]
 }

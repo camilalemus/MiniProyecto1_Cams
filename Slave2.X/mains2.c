@@ -101,10 +101,15 @@ void __interrupt() isr(void) {
     if (INTCONbits.RBIF == 1) {
         if (PORTBbits.RB0 == 1) { //If the push button is pressed down, add to the Debounce Counter
             PORTD--;
-        } 
+        }
         else if (PORTBbits.RB1 == 1) {
             PORTD++;
         }
         INTCONbits.RBIF = 0; //Turn off the interrupt flag
+        if (SSPIF == 1) { //If master send something
+            spiRead();
+            spiWrite(PORTD); //Port value
+            SSPIF = 0;
+        }
     }
 }

@@ -87,7 +87,7 @@ void setup(){
     INTCONbits.GIE = 1;             //Set Global interrupts enable
     TRISA = 0;
     TRISAbits.TRISA0 = 1;
-    TRISAbits.TRISA5 = 1;
+    TRISAbits.TRISA5 = 1;           //SS3
     TRISC = 0;                      //Port C and B are outputs
     TRISCbits.TRISC4 = 1;
     TRISD = 0;
@@ -135,5 +135,10 @@ void __interrupt() isr(void) {
         ADC_analogvalue = ADRESH;   //Copy the 8 msb on my display on PORTC
         ADC_cflag = 1;         //When the value is copied, turn on the adc_cflag
         PIR1bits.ADIF = 0;      //Turn off the ADC interrupt flag
+    }
+       if(SSPIF == 1){      //If master send something
+        spiRead();
+        spiWrite(ADC_analogvalue); //Thermometer
+        SSPIF = 0;
     }
 }

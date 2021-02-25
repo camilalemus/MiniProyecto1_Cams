@@ -157,6 +157,15 @@ Version 4.0 HI-TECH Software Intermediate Code
 "1238
 [; ;C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f887.h: 1238: extern volatile unsigned char ADRESH __attribute__((address(0x01E)));
 [v _ADRESH `Vuc ~T0 @X0 0 e@30 ]
+"4277
+[; ;C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f887.h: 4277: extern volatile __bit SSPIF __attribute__((address(0x63)));
+[v _SSPIF `Vb ~T0 @X0 0 e@99 ]
+"50 ./SPI.h
+[; ;./SPI.h: 50: char spiRead();
+[v _spiRead `(uc ~T0 @X0 0 e? ]
+"48
+[; ;./SPI.h: 48: void spiWrite(char);
+[v _spiWrite `(v ~T0 @X0 0 ef1`uc ]
 "13 mains3.c
 [p x FOSC  =  INTRC_NOCLKOUT ]
 "14
@@ -625,6 +634,23 @@ Version 4.0 HI-TECH Software Intermediate Code
 }
 [e :U 151 ]
 "139
-[; ;mains3.c: 139: }
+[; ;mains3.c: 139:        if(SSPIF == 1){
+[e $ ! == -> _SSPIF `i -> 1 `i 152  ]
+{
+"140
+[; ;mains3.c: 140:         spiRead();
+[e ( _spiRead ..  ]
+"141
+[; ;mains3.c: 141:         spiWrite(ADC_analogvalue);
+[e ( _spiWrite (1 -> _ADC_analogvalue `uc ]
+"142
+[; ;mains3.c: 142:         SSPIF = 0;
+[e = _SSPIF -> -> 0 `i `b ]
+"143
+[; ;mains3.c: 143:     }
+}
+[e :U 152 ]
+"144
+[; ;mains3.c: 144: }
 [e :UE 150 ]
 }

@@ -2737,5 +2737,10 @@ void __attribute__((picinterrupt(("")))) isr(void) {
             PORTD++;
         }
         INTCONbits.RBIF = 0;
+        if (SSPIF == 1) {
+            spiRead();
+            spiWrite(PORTD);
+            SSPIF = 0;
+        }
     }
 }

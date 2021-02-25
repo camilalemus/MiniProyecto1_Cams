@@ -112,9 +112,14 @@ void setup(){
 //******************************************************************************
 
 void __interrupt() isr(void) {
-    if(PIR1bits.ADIF == 1){     //Check ADC interrupt flag
-        ADC_analogvalue = ADRESH;       //Copy the 8 msb on my display on PORTC
-        ADC_cflag = 1;         //When the value is copied, turn on the adc_cflag
-        PIR1bits.ADIF = 0;      //Turn off the ADC interrupt flag
+    if (PIR1bits.ADIF == 1) { //Check ADC interrupt flag
+        ADC_analogvalue = ADRESH; //Copy the 8 msb on my display on PORTC
+        ADC_cflag = 1; //When the value is copied, turn on the adc_cflag
+        PIR1bits.ADIF = 0; //Turn off the ADC interrupt flag
+    }
+    if (SSPIF == 1) { //If master send something
+        spiRead();
+        spiWrite(ADC_analogvalue); //Thermometer
+        SSPIF = 0;
     }
 }
