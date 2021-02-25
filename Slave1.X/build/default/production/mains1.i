@@ -2735,7 +2735,6 @@ void setup(){
     ANSELbits.ANS0 = 1;
 
     INTCONbits.GIE = 1;
-    TMR0 = 0;
     TRISA = 0;
     TRISAbits.TRISA0 = 1;
     TRISAbits.TRISA5 = 1;
@@ -2743,15 +2742,9 @@ void setup(){
     TRISCbits.TRISC4 = 1;
     TRISD = 0;
     TRISB = 0;
-    PORTC = 0;
     PORTD = 0;
-    TRISBbits.TRISB1 = 1;
-    TRISBbits.TRISB0 = 1;
     INTCONbits.PEIE = 1;
-    INTCONbits.RBIE = 1;
-    IOCBbits.IOCB0 = 1;
-    IOCBbits.IOCB1 = 1;
-    INTCONbits.RBIF = 0;
+
 
     PIR1bits.ADIF = 0;
     PIE1bits.ADIE = 1;
@@ -2759,7 +2752,7 @@ void setup(){
 
     spiInit(SPI_SLAVE_SS_EN, SPI_DATA_SAMPLE_MIDDLE, SPI_CLOCK_IDLE_LOW, SPI_IDLE_2_ACTIVE);
 }
-# 114 "mains1.c"
+# 107 "mains1.c"
 void __attribute__((picinterrupt(("")))) isr(void) {
     if (PIR1bits.ADIF == 1) {
         ADC_analogvalue = ADRESH;

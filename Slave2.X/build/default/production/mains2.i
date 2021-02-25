@@ -2690,6 +2690,7 @@ void setup(void);
 void main(void) {
     setup();
     while (1) {
+        spiWrite(PORTD);
     }
 }
 
@@ -2701,11 +2702,11 @@ void setup(){
 
     ANSEL = 0;
     ANSELH = 0;
-    ANSELbits.ANS2 = 1;
+
 
     INTCONbits.GIE = 1;
     TRISA = 0;
-    TRISAbits.TRISA2 = 1;
+
     TRISAbits.TRISA5 = 1;
     TRISC = 0;
     TRISCbits.TRISC4 = 1;
@@ -2721,26 +2722,26 @@ void setup(){
     IOCBbits.IOCB1 = 1;
     INTCONbits.RBIF = 0;
 
-    PIR1bits.ADIF = 0;
-    PIE1bits.ADIE = 1;
-    ADCON0bits.ADON = 1;
+
+
+
 
     spiInit(SPI_SLAVE_SS_EN, SPI_DATA_SAMPLE_MIDDLE, SPI_CLOCK_IDLE_LOW, SPI_IDLE_2_ACTIVE);
 }
-# 100 "mains2.c"
+# 101 "mains2.c"
 void __attribute__((picinterrupt(("")))) isr(void) {
     if (INTCONbits.RBIF == 1) {
         if (PORTBbits.RB0 == 1) {
             PORTD--;
-        }
-        else if (PORTBbits.RB1 == 1) {
+        } else if (PORTBbits.RB1 == 1) {
             PORTD++;
         }
         INTCONbits.RBIF = 0;
-        if (SSPIF == 1) {
-            spiRead();
-            spiWrite(PORTD);
-            SSPIF = 0;
-        }
     }
+
+
+
+
+
+
 }

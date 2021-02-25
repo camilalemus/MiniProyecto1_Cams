@@ -2726,7 +2726,7 @@ void slave_2(void) {
     _delay((unsigned long)((1)*((8000000)/4000.0)));
 
     spiWrite(1);
-    CONT = spiRead();
+    PORTB = spiRead();
 
     _delay((unsigned long)((1)*((8000000)/4000.0)));
     PORTCbits.RC1 = 1;
@@ -2752,6 +2752,7 @@ void slave_3(void) {
 void setup(void){
     ANSEL = 0;
     ANSELH = 0;
+    TRISC = 0;
     TRISCbits.TRISC4 = 1;
     TRISB = 0;
     TRISD = 0;

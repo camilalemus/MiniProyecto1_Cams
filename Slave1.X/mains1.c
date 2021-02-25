@@ -78,23 +78,16 @@ void setup(){
     ANSELbits.ANS0 = 1;
 
     INTCONbits.GIE = 1;             //Set Global interrupts enable
-    TMR0 = 0;                       //Set Timer0 start point
     TRISA = 0;
-    TRISAbits.TRISA0 = 1;
+    TRISAbits.TRISA0 = 1;           //Pot on this bit
     TRISAbits.TRISA5 = 1;           //Select bit
     TRISC = 0;                      //Port C and B are outputs
     TRISCbits.TRISC4 = 1;           //Input of slave SDI
     TRISD = 0;
     TRISB = 0;
-    PORTC = 0;                      // Turn off display and LEDs
     PORTD = 0;
-    TRISBbits.TRISB1 = 1;           //Inputs B0 and B1 because of push buttons
-    TRISBbits.TRISB0 = 1;
     INTCONbits.PEIE = 1;            //Periferal Enable
-    INTCONbits.RBIE = 1;            //Interrupts on change
-    IOCBbits.IOCB0 = 1;             //Pines
-    IOCBbits.IOCB1 = 1;
-    INTCONbits.RBIF = 0;
+//    INTCONbits.RBIF = 0;
 
     PIR1bits.ADIF = 0; //ADC interrupt flag cleared
     PIE1bits.ADIE = 1; //ADC interrupt enable ON
@@ -119,7 +112,7 @@ void __interrupt() isr(void) {
     }
     if (SSPIF == 1) { //If master send something
         spiRead();
-        spiWrite(ADC_analogvalue); //Thermometer
+        spiWrite(ADC_analogvalue); //POT
         SSPIF = 0;
     }
 }

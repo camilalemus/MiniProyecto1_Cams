@@ -27,7 +27,7 @@ cstackBANK0 BANK0 1 20 20 3 1
 intentry CODE 0 4 4 8 2
 bssCOMMON COMMON 1 78 78 2 1
 config CONFIG 4 2007 2007 2 2
-$C:\Users\camil\AppData\Local\Temp\s1d4.o
+$C:\Users\camil\AppData\Local\Temp\sgeo.o
 reset_vec CODE 0 0 0 3 2
 end_init CODE 0 C C 3 2
 config CONFIG 4 2007 2007 2 2
@@ -77,13 +77,13 @@ STRING 1F0-1FFF 2
 # All other numeric values are in decimal.
 %LINETAB
 $dist/default/production\Slave3.X.production.o
-F cinit CODE >801:C:\Users\camil\AppData\Local\Temp\s1d4.s
-F cinit CODE >804:C:\Users\camil\AppData\Local\Temp\s1d4.s
-F cinit CODE >818:C:\Users\camil\AppData\Local\Temp\s1d4.s
-10 cinit CODE >819:C:\Users\camil\AppData\Local\Temp\s1d4.s
-11 cinit CODE >825:C:\Users\camil\AppData\Local\Temp\s1d4.s
-11 cinit CODE >827:C:\Users\camil\AppData\Local\Temp\s1d4.s
-12 cinit CODE >828:C:\Users\camil\AppData\Local\Temp\s1d4.s
+F cinit CODE >801:C:\Users\camil\AppData\Local\Temp\sgeo.s
+F cinit CODE >804:C:\Users\camil\AppData\Local\Temp\sgeo.s
+F cinit CODE >818:C:\Users\camil\AppData\Local\Temp\sgeo.s
+10 cinit CODE >819:C:\Users\camil\AppData\Local\Temp\sgeo.s
+11 cinit CODE >825:C:\Users\camil\AppData\Local\Temp\sgeo.s
+11 cinit CODE >827:C:\Users\camil\AppData\Local\Temp\sgeo.s
+12 cinit CODE >828:C:\Users\camil\AppData\Local\Temp\sgeo.s
 4 intentry CODE >133:C:\Users\camil\Desktop\UVG\2021\Electrónica Digital 2\MiniProyecto1_Cams\MiniProyecto1_Cams\Slave3.X\mains3.c
 1E3 text8 CODE >29:C:\Users\camil\Desktop\UVG\2021\Electrónica Digital 2\MiniProyecto1_Cams\MiniProyecto1_Cams\Slave3.X\SPI.c
 1E3 text8 CODE >31:C:\Users\camil\Desktop\UVG\2021\Electrónica Digital 2\MiniProyecto1_Cams\MiniProyecto1_Cams\Slave3.X\SPI.c
@@ -275,21 +275,21 @@ __Hspace_4 4010 0 ABS 0 - -
 spiInit@sTransmitEdge 76 0 COMMON 1 cstackCOMMON dist/default/production\Slave3.X.production.o
 __Heeprom_data 0 0 EEDATA 3 eeprom_data -
 __Hstrings 0 0 ABS 0 strings -
-___sp 0 0 STACK 2 stack C:\Users\camil\AppData\Local\Temp\s1d4.o
+___sp 0 0 STACK 2 stack C:\Users\camil\AppData\Local\Temp\sgeo.o
 _main 240 0 CODE 0 maintext dist/default/production\Slave3.X.production.o
 btemp 7E 0 ABS 0 - dist/default/production\Slave3.X.production.o
-start 18 0 CODE 0 init C:\Users\camil\AppData\Local\Temp\s1d4.o
+start 18 0 CODE 0 init C:\Users\camil\AppData\Local\Temp\sgeo.o
 __size_of_main 0 0 ABS 0 - dist/default/production\Slave3.X.production.o
 __HbssCOMMON 0 0 ABS 0 bssCOMMON -
 _ADC_cflag 79 0 COMMON 1 bssCOMMON dist/default/production\Slave3.X.production.o
 __Hpowerup 0 0 CODE 0 powerup -
 __size_of_ADC_init 0 0 ABS 0 - dist/default/production\Slave3.X.production.o
-intlevel0 0 0 ENTRY 0 functab C:\Users\camil\AppData\Local\Temp\s1d4.o
-intlevel1 0 0 ENTRY 0 functab C:\Users\camil\AppData\Local\Temp\s1d4.o
-intlevel2 0 0 ENTRY 0 functab C:\Users\camil\AppData\Local\Temp\s1d4.o
-intlevel3 0 0 ENTRY 0 functab C:\Users\camil\AppData\Local\Temp\s1d4.o
-intlevel4 0 0 ENTRY 0 functab C:\Users\camil\AppData\Local\Temp\s1d4.o
-intlevel5 0 0 ENTRY 0 functab C:\Users\camil\AppData\Local\Temp\s1d4.o
+intlevel0 0 0 ENTRY 0 functab C:\Users\camil\AppData\Local\Temp\sgeo.o
+intlevel1 0 0 ENTRY 0 functab C:\Users\camil\AppData\Local\Temp\sgeo.o
+intlevel2 0 0 ENTRY 0 functab C:\Users\camil\AppData\Local\Temp\sgeo.o
+intlevel3 0 0 ENTRY 0 functab C:\Users\camil\AppData\Local\Temp\sgeo.o
+intlevel4 0 0 ENTRY 0 functab C:\Users\camil\AppData\Local\Temp\sgeo.o
+intlevel5 0 0 ENTRY 0 functab C:\Users\camil\AppData\Local\Temp\sgeo.o
 __LbssCOMMON 0 0 ABS 0 bssCOMMON -
 wtemp0 7E 0 ABS 0 - dist/default/production\Slave3.X.production.o
 __Hfunctab 0 0 ENTRY 0 functab -
@@ -304,8 +304,8 @@ __Lmaintext 0 0 ABS 0 maintext -
 ADC_init@ADCSbit 77 0 COMMON 1 cstackCOMMON dist/default/production\Slave3.X.production.o
 _ADC_init 2A 0 CODE 0 text4 dist/default/production\Slave3.X.production.o
 __end_of_ADC_init 240 0 CODE 0 text4 dist/default/production\Slave3.X.production.o
-___stackhi 0 0 ABS 0 - C:\Users\camil\AppData\Local\Temp\s1d4.o
-___stacklo 0 0 ABS 0 - C:\Users\camil\AppData\Local\Temp\s1d4.o
+___stackhi 0 0 ABS 0 - C:\Users\camil\AppData\Local\Temp\sgeo.o
+___stacklo 0 0 ABS 0 - C:\Users\camil\AppData\Local\Temp\sgeo.o
 __size_of_setup 0 0 ABS 0 - dist/default/production\Slave3.X.production.o
 spiInit@sDataSample 74 0 COMMON 1 cstackCOMMON dist/default/production\Slave3.X.production.o
 start_initialization 1E 0 CODE 0 cinit dist/default/production\Slave3.X.production.o
@@ -316,7 +316,7 @@ _SSPBUF 13 0 ABS 0 - dist/default/production\Slave3.X.production.o
 _SSPCON 14 0 ABS 0 - dist/default/production\Slave3.X.production.o
 _TRISC3 43B 0 ABS 0 - dist/default/production\Slave3.X.production.o
 _TRISC5 43D 0 ABS 0 - dist/default/production\Slave3.X.production.o
-___int_sp 0 0 STACK 2 stack C:\Users\camil\AppData\Local\Temp\s1d4.o
+___int_sp 0 0 STACK 2 stack C:\Users\camil\AppData\Local\Temp\sgeo.o
 __Hbank0 0 0 ABS 0 bank0 -
 __Hbank1 0 0 ABS 0 bank1 -
 __Hbank2 0 0 ABS 0 bank2 -
@@ -365,7 +365,7 @@ _isr 2F2 0 CODE 0 text5 dist/default/production\Slave3.X.production.o
 saved_w 7E 0 ABS 0 - dist/default/production\Slave3.X.production.o
 __end_of_isr 33E 0 CODE 0 text5 dist/default/production\Slave3.X.production.o
 __Lintentry 8 0 CODE 0 intentry -
-reset_vec 0 0 CODE 0 reset_vec C:\Users\camil\AppData\Local\Temp\s1d4.o
+reset_vec 0 0 CODE 0 reset_vec C:\Users\camil\AppData\Local\Temp\sgeo.o
 _thermometer 29E 0 CODE 0 text1 dist/default/production\Slave3.X.production.o
 _PIE1bits 8C 0 ABS 0 - dist/default/production\Slave3.X.production.o
 __pmaintext 240 0 CODE 0 maintext dist/default/production\Slave3.X.production.o

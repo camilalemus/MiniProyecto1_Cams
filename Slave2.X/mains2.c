@@ -51,6 +51,7 @@ void setup(void);
 void main(void) {
     setup();
     while (1) {
+        spiWrite(PORTD); //Port value
     }
 }
 
@@ -62,11 +63,11 @@ void setup(){
         
     ANSEL = 0;
     ANSELH = 0;
-    ANSELbits.ANS2 = 1;
+    //ANSELbits.ANS2 = 1;
     
     INTCONbits.GIE = 1;             //Set Global interrupts enable
     TRISA = 0;
-    TRISAbits.TRISA2 = 1;
+//    TRISAbits.TRISA2 = 1;
     TRISAbits.TRISA5 = 1;           //Select bit
     TRISC = 0;                      //Port C and B are outputs
     TRISCbits.TRISC4 = 1;           //Input of slave SDI
@@ -82,9 +83,9 @@ void setup(){
     IOCBbits.IOCB1 = 1;
     INTCONbits.RBIF = 0;
     
-    PIR1bits.ADIF = 0; //ADC interrupt flag cleared
-    PIE1bits.ADIE = 1; //ADC interrupt enable ON
-    ADCON0bits.ADON = 1; //ADC Enable bit
+//    PIR1bits.ADIF = 0; //ADC interrupt flag cleared
+//    PIE1bits.ADIE = 1; //ADC interrupt enable ON
+//    ADCON0bits.ADON = 1; //ADC Enable bit
     
     spiInit(SPI_SLAVE_SS_EN, SPI_DATA_SAMPLE_MIDDLE, SPI_CLOCK_IDLE_LOW, SPI_IDLE_2_ACTIVE);
 }
@@ -101,15 +102,15 @@ void __interrupt() isr(void) {
     if (INTCONbits.RBIF == 1) {
         if (PORTBbits.RB0 == 1) { //If the push button is pressed down, add to the Debounce Counter
             PORTD--;
-        }
-        else if (PORTBbits.RB1 == 1) {
+        } else if (PORTBbits.RB1 == 1) {
             PORTD++;
         }
         INTCONbits.RBIF = 0; //Turn off the interrupt flag
-        if (SSPIF == 1) { //If master send something
-            spiRead();
-            spiWrite(PORTD); //Port value
-            SSPIF = 0;
-        }
     }
+//    else if (SSPIF == 1) { //If master send something
+//        spiRead();
+//        spiWrite(PORTD); //Port value
+//        SSPIF = 0;
+//    }
+
 }

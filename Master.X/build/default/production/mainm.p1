@@ -33,12 +33,18 @@ Version 4.0 HI-TECH Software Intermediate Code
 "49
 [; ;./SPI.h: 49: char spiRead();
 [v _spiRead `(uc ~T0 @X0 0 e? ]
-"3387 C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f887.h
+"228 C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f887.h
+[; ;C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f887.h: 228: extern volatile unsigned char PORTB __attribute__((address(0x006)));
+[v _PORTB `Vuc ~T0 @X0 0 e@6 ]
+"3387
 [; ;C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f887.h: 3387: extern volatile unsigned char ANSEL __attribute__((address(0x188)));
 [v _ANSEL `Vuc ~T0 @X0 0 e@392 ]
 "3449
 [; ;C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f887.h: 3449: extern volatile unsigned char ANSELH __attribute__((address(0x189)));
 [v _ANSELH `Vuc ~T0 @X0 0 e@393 ]
+"1540
+[; ;C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f887.h: 1540: extern volatile unsigned char TRISC __attribute__((address(0x087)));
+[v _TRISC `Vuc ~T0 @X0 0 e@135 ]
 "1546
 [; ;C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f887.h: 1546:     struct {
 [s S57 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
@@ -56,14 +62,11 @@ Version 4.0 HI-TECH Software Intermediate Code
 "1602
 [; ;C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f887.h: 1602: extern volatile unsigned char TRISD __attribute__((address(0x088)));
 [v _TRISD `Vuc ~T0 @X0 0 e@136 ]
-"228
-[; ;C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f887.h: 228: extern volatile unsigned char PORTB __attribute__((address(0x006)));
-[v _PORTB `Vuc ~T0 @X0 0 e@6 ]
 "352
 [; ;C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f887.h: 352: extern volatile unsigned char PORTD __attribute__((address(0x008)));
 [v _PORTD `Vuc ~T0 @X0 0 e@8 ]
-"122 mainm.c
-[; ;mainm.c: 122:     spiInit(SPI_MASTER_OSC_DIV4, SPI_DATA_SAMPLE_MIDDLE, SPI_CLOCK_IDLE_LOW, SPI_IDLE_2_ACTIVE);
+"123 mainm.c
+[; ;mainm.c: 123:     spiInit(SPI_MASTER_OSC_DIV4, SPI_DATA_SAMPLE_MIDDLE, SPI_CLOCK_IDLE_LOW, SPI_IDLE_2_ACTIVE);
 [c E1292 32 33 34 35 36 37 .. ]
 [n E1292 . SPI_MASTER_OSC_DIV4 SPI_MASTER_OSC_DIV16 SPI_MASTER_OSC_DIV64 SPI_MASTER_TMR2 SPI_SLAVE_SS_EN SPI_SLAVE_SS_DIS  ]
 [c E1300 0 128 .. ]
@@ -422,8 +425,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;mainm.c: 87:     spiWrite(1);
 [e ( _spiWrite (1 -> -> 1 `i `uc ]
 "88
-[; ;mainm.c: 88:     CONT = spiRead();
-[e = _CONT -> ( _spiRead ..  `uc ]
+[; ;mainm.c: 88:     PORTB = spiRead();
+[e = _PORTB -> ( _spiRead ..  `uc ]
 "90
 [; ;mainm.c: 90:     _delay((unsigned long)((1)*((8000000)/4000.0)));
 [e ( __delay (1 -> * -> -> 1 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
@@ -475,33 +478,36 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;mainm.c: 113:     ANSELH = 0;
 [e = _ANSELH -> -> 0 `i `uc ]
 "114
-[; ;mainm.c: 114:     TRISCbits.TRISC4 = 1;
-[e = . . _TRISCbits 0 4 -> -> 1 `i `uc ]
+[; ;mainm.c: 114:     TRISC = 0;
+[e = _TRISC -> -> 0 `i `uc ]
 "115
-[; ;mainm.c: 115:     TRISB = 0;
-[e = _TRISB -> -> 0 `i `uc ]
+[; ;mainm.c: 115:     TRISCbits.TRISC4 = 1;
+[e = . . _TRISCbits 0 4 -> -> 1 `i `uc ]
 "116
-[; ;mainm.c: 116:     TRISD = 0;
-[e = _TRISD -> -> 0 `i `uc ]
+[; ;mainm.c: 116:     TRISB = 0;
+[e = _TRISB -> -> 0 `i `uc ]
 "117
-[; ;mainm.c: 117:     PORTB = 0;
-[e = _PORTB -> -> 0 `i `uc ]
+[; ;mainm.c: 117:     TRISD = 0;
+[e = _TRISD -> -> 0 `i `uc ]
 "118
-[; ;mainm.c: 118:     PORTD = 0;
-[e = _PORTD -> -> 0 `i `uc ]
+[; ;mainm.c: 118:     PORTB = 0;
+[e = _PORTB -> -> 0 `i `uc ]
 "119
-[; ;mainm.c: 119:     PORTCbits.RC0 = 1;
-[e = . . _PORTCbits 0 0 -> -> 1 `i `uc ]
+[; ;mainm.c: 119:     PORTD = 0;
+[e = _PORTD -> -> 0 `i `uc ]
 "120
-[; ;mainm.c: 120:     PORTCbits.RC1 = 1;
-[e = . . _PORTCbits 0 1 -> -> 1 `i `uc ]
+[; ;mainm.c: 120:     PORTCbits.RC0 = 1;
+[e = . . _PORTCbits 0 0 -> -> 1 `i `uc ]
 "121
-[; ;mainm.c: 121:     PORTCbits.RC2 = 1;
-[e = . . _PORTCbits 0 2 -> -> 1 `i `uc ]
+[; ;mainm.c: 121:     PORTCbits.RC1 = 1;
+[e = . . _PORTCbits 0 1 -> -> 1 `i `uc ]
 "122
-[; ;mainm.c: 122:     spiInit(SPI_MASTER_OSC_DIV4, SPI_DATA_SAMPLE_MIDDLE, SPI_CLOCK_IDLE_LOW, SPI_IDLE_2_ACTIVE);
-[e ( _spiInit (4 , , , . `E1292 0 . `E1300 0 . `E1304 1 . `E1308 0 ]
+[; ;mainm.c: 122:     PORTCbits.RC2 = 1;
+[e = . . _PORTCbits 0 2 -> -> 1 `i `uc ]
 "123
-[; ;mainm.c: 123: }
+[; ;mainm.c: 123:     spiInit(SPI_MASTER_OSC_DIV4, SPI_DATA_SAMPLE_MIDDLE, SPI_CLOCK_IDLE_LOW, SPI_IDLE_2_ACTIVE);
+[e ( _spiInit (4 , , , . `E1292 0 . `E1300 0 . `E1304 1 . `E1308 0 ]
+"124
+[; ;mainm.c: 124: }
 [e :UE 145 ]
 }

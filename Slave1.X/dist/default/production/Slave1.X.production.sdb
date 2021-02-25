@@ -3,7 +3,7 @@
 [d edition pro ]
 [d chip 16F887 ]
 [d frameptr 0 ]
-"103 C:\Users\camil\Desktop\UVG\2021\Electrónica Digital 2\MiniProyecto1_Cams\MiniProyecto1_Cams\Slave1.X\mains1.c
+"96 C:\Users\camil\Desktop\UVG\2021\Electrónica Digital 2\MiniProyecto1_Cams\MiniProyecto1_Cams\Slave1.X\mains1.c
 [e E1297 . `uc
 SPI_MASTER_OSC_DIV4 32
 SPI_MASTER_OSC_DIV16 33
@@ -59,7 +59,7 @@ SPI_ACTIVE_2_IDLE 64
 [v _main main `(v  1 e 1 0 ]
 "74
 [v _setup setup `(v  1 e 1 0 ]
-"114
+"107
 [v _isr isr `II(v  1 e 1 0 ]
 "12 C:\Users\camil\Desktop\UVG\2021\Electrónica Digital 2\MiniProyecto1_Cams\MiniProyecto1_Cams\Slave1.X\SPI.c
 [v _spiInit spiInit `(v  1 e 1 0 ]
@@ -69,9 +69,7 @@ SPI_ACTIVE_2_IDLE 64
 [v _spiWrite spiWrite `(v  1 e 1 0 ]
 "47
 [v _spiRead spiRead `(uc  1 e 1 0 ]
-"59 C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f887.h
-[v _TMR0 TMR0 `VEuc  1 e 1 @1 ]
-"290
+"290 C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f887.h
 [v _PORTC PORTC `VEuc  1 e 1 @7 ]
 "352
 [v _PORTD PORTD `VEuc  1 e 1 @8 ]
@@ -92,7 +90,7 @@ SPI_ACTIVE_2_IDLE 64
 ]
 [u S124 . 1 `S110 1 . 1 0 `S119 1 . 1 0 ]
 [v _INTCONbits INTCONbits `VES124  1 e 1 @11 ]
-[s S237 . 1 `uc 1 TMR1IF 1 0 :1:0 
+[s S189 . 1 `uc 1 TMR1IF 1 0 :1:0 
 `uc 1 TMR2IF 1 0 :1:1 
 `uc 1 CCP1IF 1 0 :1:2 
 `uc 1 SSPIF 1 0 :1:3 
@@ -101,8 +99,8 @@ SPI_ACTIVE_2_IDLE 64
 `uc 1 ADIF 1 0 :1:6 
 ]
 "553
-[u S245 . 1 `S237 1 . 1 0 ]
-[v _PIR1bits PIR1bits `VES245  1 e 1 @12 ]
+[u S197 . 1 `S189 1 . 1 0 ]
+[v _PIR1bits PIR1bits `VES197  1 e 1 @12 ]
 "843
 [v _SSPBUF SSPBUF `VEuc  1 e 1 @19 ]
 "850
@@ -134,7 +132,7 @@ SPI_ACTIVE_2_IDLE 64
 [v _ADCON0bits ADCON0bits `VES61  1 e 1 @31 ]
 "1416
 [v _TRISA TRISA `VEuc  1 e 1 @133 ]
-[s S144 . 1 `uc 1 TRISA0 1 0 :1:0 
+[s S143 . 1 `uc 1 TRISA0 1 0 :1:0 
 `uc 1 TRISA1 1 0 :1:1 
 `uc 1 TRISA2 1 0 :1:2 
 `uc 1 TRISA3 1 0 :1:3 
@@ -144,25 +142,13 @@ SPI_ACTIVE_2_IDLE 64
 `uc 1 TRISA7 1 0 :1:7 
 ]
 "1433
-[u S153 . 1 `S144 1 . 1 0 ]
-[v _TRISAbits TRISAbits `VES153  1 e 1 @133 ]
+[u S152 . 1 `S143 1 . 1 0 ]
+[v _TRISAbits TRISAbits `VES152  1 e 1 @133 ]
 "1478
 [v _TRISB TRISB `VEuc  1 e 1 @134 ]
-[s S190 . 1 `uc 1 TRISB0 1 0 :1:0 
-`uc 1 TRISB1 1 0 :1:1 
-`uc 1 TRISB2 1 0 :1:2 
-`uc 1 TRISB3 1 0 :1:3 
-`uc 1 TRISB4 1 0 :1:4 
-`uc 1 TRISB5 1 0 :1:5 
-`uc 1 TRISB6 1 0 :1:6 
-`uc 1 TRISB7 1 0 :1:7 
-]
-"1495
-[u S199 . 1 `S190 1 . 1 0 ]
-[v _TRISBbits TRISBbits `VES199  1 e 1 @134 ]
 "1540
 [v _TRISC TRISC `VEuc  1 e 1 @135 ]
-[s S166 . 1 `uc 1 TRISC0 1 0 :1:0 
+[s S165 . 1 `uc 1 TRISC0 1 0 :1:0 
 `uc 1 TRISC1 1 0 :1:1 
 `uc 1 TRISC2 1 0 :1:2 
 `uc 1 TRISC3 1 0 :1:3 
@@ -172,11 +158,11 @@ SPI_ACTIVE_2_IDLE 64
 `uc 1 TRISC7 1 0 :1:7 
 ]
 "1557
-[u S175 . 1 `S166 1 . 1 0 ]
-[v _TRISCbits TRISCbits `VES175  1 e 1 @135 ]
+[u S174 . 1 `S165 1 . 1 0 ]
+[v _TRISCbits TRISCbits `VES174  1 e 1 @135 ]
 "1602
 [v _TRISD TRISD `VEuc  1 e 1 @136 ]
-[s S256 . 1 `uc 1 TMR1IE 1 0 :1:0 
+[s S208 . 1 `uc 1 TMR1IE 1 0 :1:0 
 `uc 1 TMR2IE 1 0 :1:1 
 `uc 1 CCP1IE 1 0 :1:2 
 `uc 1 SSPIE 1 0 :1:3 
@@ -185,11 +171,11 @@ SPI_ACTIVE_2_IDLE 64
 `uc 1 ADIE 1 0 :1:6 
 ]
 "1718
-[u S264 . 1 `S256 1 . 1 0 ]
-[v _PIE1bits PIE1bits `VES264  1 e 1 @140 ]
+[u S216 . 1 `S208 1 . 1 0 ]
+[v _PIE1bits PIE1bits `VES216  1 e 1 @140 ]
 "2177
 [v _SSPSTAT SSPSTAT `VEuc  1 e 1 @148 ]
-[s S490 . 1 `uc 1 BF 1 0 :1:0 
+[s S426 . 1 `uc 1 BF 1 0 :1:0 
 `uc 1 UA 1 0 :1:1 
 `uc 1 R_nW 1 0 :1:2 
 `uc 1 S 1 0 :1:3 
@@ -199,62 +185,48 @@ SPI_ACTIVE_2_IDLE 64
 `uc 1 SMP 1 0 :1:7 
 ]
 "2231
-[s S499 . 1 `uc 1 . 1 0 :2:0 
+[s S435 . 1 `uc 1 . 1 0 :2:0 
 `uc 1 R 1 0 :1:2 
 `uc 1 . 1 0 :2:3 
 `uc 1 D 1 0 :1:5 
 ]
-[s S504 . 1 `uc 1 . 1 0 :2:0 
+[s S440 . 1 `uc 1 . 1 0 :2:0 
 `uc 1 I2C_READ 1 0 :1:2 
 `uc 1 I2C_START 1 0 :1:3 
 `uc 1 I2C_STOP 1 0 :1:4 
 `uc 1 I2C_DATA 1 0 :1:5 
 ]
-[s S510 . 1 `uc 1 . 1 0 :2:0 
+[s S446 . 1 `uc 1 . 1 0 :2:0 
 `uc 1 nW 1 0 :1:2 
 `uc 1 . 1 0 :2:3 
 `uc 1 nA 1 0 :1:5 
 ]
-[s S515 . 1 `uc 1 . 1 0 :2:0 
+[s S451 . 1 `uc 1 . 1 0 :2:0 
 `uc 1 nWRITE 1 0 :1:2 
 `uc 1 . 1 0 :2:3 
 `uc 1 nADDRESS 1 0 :1:5 
 ]
-[s S520 . 1 `uc 1 . 1 0 :2:0 
+[s S456 . 1 `uc 1 . 1 0 :2:0 
 `uc 1 R_W 1 0 :1:2 
 `uc 1 . 1 0 :2:3 
 `uc 1 D_A 1 0 :1:5 
 ]
-[s S525 . 1 `uc 1 . 1 0 :2:0 
+[s S461 . 1 `uc 1 . 1 0 :2:0 
 `uc 1 READ_WRITE 1 0 :1:2 
 `uc 1 . 1 0 :2:3 
 `uc 1 DATA_ADDRESS 1 0 :1:5 
 ]
-[u S530 . 1 `S490 1 . 1 0 `S499 1 . 1 0 `S504 1 . 1 0 `S510 1 . 1 0 `S515 1 . 1 0 `S520 1 . 1 0 `S525 1 . 1 0 ]
-[v _SSPSTATbits SSPSTATbits `VES530  1 e 1 @148 ]
-[s S211 . 1 `uc 1 IOCB 1 0 :8:0 
-]
-"2436
-[s S213 . 1 `uc 1 IOCB0 1 0 :1:0 
-`uc 1 IOCB1 1 0 :1:1 
-`uc 1 IOCB2 1 0 :1:2 
-`uc 1 IOCB3 1 0 :1:3 
-`uc 1 IOCB4 1 0 :1:4 
-`uc 1 IOCB5 1 0 :1:5 
-`uc 1 IOCB6 1 0 :1:6 
-`uc 1 IOCB7 1 0 :1:7 
-]
-[u S222 . 1 `S211 1 . 1 0 `S213 1 . 1 0 ]
-[v _IOCBbits IOCBbits `VES222  1 e 1 @150 ]
-[s S423 . 1 `uc 1 . 1 0 :4:0 
+[u S466 . 1 `S426 1 . 1 0 `S435 1 . 1 0 `S440 1 . 1 0 `S446 1 . 1 0 `S451 1 . 1 0 `S456 1 . 1 0 `S461 1 . 1 0 ]
+[v _SSPSTATbits SSPSTATbits `VES466  1 e 1 @148 ]
+[s S359 . 1 `uc 1 . 1 0 :4:0 
 `uc 1 VCFG0 1 0 :1:4 
 `uc 1 VCFG1 1 0 :1:5 
 `uc 1 . 1 0 :1:6 
 `uc 1 ADFM 1 0 :1:7 
 ]
 "2991
-[u S429 . 1 `S423 1 . 1 0 ]
-[v _ADCON1bits ADCON1bits `VES429  1 e 1 @159 ]
+[u S365 . 1 `S359 1 . 1 0 ]
+[v _ADCON1bits ADCON1bits `VES365  1 e 1 @159 ]
 "3387
 [v _ANSEL ANSEL `VEuc  1 e 1 @392 ]
 [s S89 . 1 `uc 1 ANS0 1 0 :1:0 
@@ -289,7 +261,7 @@ SPI_ACTIVE_2_IDLE 64
 "74
 [v _setup setup `(v  1 e 1 0 ]
 {
-"104
+"97
 } 0
 "12 C:\Users\camil\Desktop\UVG\2021\Electrónica Digital 2\MiniProyecto1_Cams\MiniProyecto1_Cams\Slave1.X\SPI.c
 [v _spiInit spiInit `(v  1 e 1 0 ]
@@ -314,10 +286,10 @@ SPI_ACTIVE_2_IDLE 64
 [v ADC_init@ADCSbit ADCSbit `uc  1 a 1 7 ]
 "120
 } 0
-"114 C:\Users\camil\Desktop\UVG\2021\Electrónica Digital 2\MiniProyecto1_Cams\MiniProyecto1_Cams\Slave1.X\mains1.c
+"107 C:\Users\camil\Desktop\UVG\2021\Electrónica Digital 2\MiniProyecto1_Cams\MiniProyecto1_Cams\Slave1.X\mains1.c
 [v _isr isr `II(v  1 e 1 0 ]
 {
-"125
+"118
 } 0
 "34 C:\Users\camil\Desktop\UVG\2021\Electrónica Digital 2\MiniProyecto1_Cams\MiniProyecto1_Cams\Slave1.X\SPI.c
 [v _spiWrite spiWrite `(v  1 e 1 0 ]

@@ -82,7 +82,7 @@ void setup(){
         
     ANSEL = 0;
     ANSELH = 0;
-    ANSELbits.ANS0 = 1;
+    ANSELbits.ANS0 = 1;             //Thermometer on this port
     
     INTCONbits.GIE = 1;             //Set Global interrupts enable
     TRISA = 0;

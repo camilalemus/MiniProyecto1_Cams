@@ -3,7 +3,7 @@
 [d edition pro ]
 [d chip 16F887 ]
 [d frameptr 0 ]
-"122 C:\Users\camil\Desktop\UVG\2021\Electrónica Digital 2\MiniProyecto1_Cams\MiniProyecto1_Cams\Master.X\mainm.c
+"123 C:\Users\camil\Desktop\UVG\2021\Electrónica Digital 2\MiniProyecto1_Cams\MiniProyecto1_Cams\Master.X\mainm.c
 [e E1292 . `uc
 SPI_MASTER_OSC_DIV4 32
 SPI_MASTER_OSC_DIV16 33
@@ -93,7 +93,9 @@ SPI_ACTIVE_2_IDLE 64
 [v _SSPCON SSPCON `VEuc  1 e 1 @20 ]
 "1478
 [v _TRISB TRISB `VEuc  1 e 1 @134 ]
-[s S76 . 1 `uc 1 TRISC0 1 0 :1:0 
+"1540
+[v _TRISC TRISC `VEuc  1 e 1 @135 ]
+[s S78 . 1 `uc 1 TRISC0 1 0 :1:0 
 `uc 1 TRISC1 1 0 :1:1 
 `uc 1 TRISC2 1 0 :1:2 
 `uc 1 TRISC3 1 0 :1:3 
@@ -103,13 +105,13 @@ SPI_ACTIVE_2_IDLE 64
 `uc 1 TRISC7 1 0 :1:7 
 ]
 "1557
-[u S85 . 1 `S76 1 . 1 0 ]
-[v _TRISCbits TRISCbits `VES85  1 e 1 @135 ]
+[u S87 . 1 `S78 1 . 1 0 ]
+[v _TRISCbits TRISCbits `VES87  1 e 1 @135 ]
 "1602
 [v _TRISD TRISD `VEuc  1 e 1 @136 ]
 "2177
 [v _SSPSTAT SSPSTAT `VEuc  1 e 1 @148 ]
-[s S173 . 1 `uc 1 BF 1 0 :1:0 
+[s S174 . 1 `uc 1 BF 1 0 :1:0 
 `uc 1 UA 1 0 :1:1 
 `uc 1 R_nW 1 0 :1:2 
 `uc 1 S 1 0 :1:3 
@@ -119,39 +121,39 @@ SPI_ACTIVE_2_IDLE 64
 `uc 1 SMP 1 0 :1:7 
 ]
 "2231
-[s S182 . 1 `uc 1 . 1 0 :2:0 
+[s S183 . 1 `uc 1 . 1 0 :2:0 
 `uc 1 R 1 0 :1:2 
 `uc 1 . 1 0 :2:3 
 `uc 1 D 1 0 :1:5 
 ]
-[s S187 . 1 `uc 1 . 1 0 :2:0 
+[s S188 . 1 `uc 1 . 1 0 :2:0 
 `uc 1 I2C_READ 1 0 :1:2 
 `uc 1 I2C_START 1 0 :1:3 
 `uc 1 I2C_STOP 1 0 :1:4 
 `uc 1 I2C_DATA 1 0 :1:5 
 ]
-[s S193 . 1 `uc 1 . 1 0 :2:0 
+[s S194 . 1 `uc 1 . 1 0 :2:0 
 `uc 1 nW 1 0 :1:2 
 `uc 1 . 1 0 :2:3 
 `uc 1 nA 1 0 :1:5 
 ]
-[s S198 . 1 `uc 1 . 1 0 :2:0 
+[s S199 . 1 `uc 1 . 1 0 :2:0 
 `uc 1 nWRITE 1 0 :1:2 
 `uc 1 . 1 0 :2:3 
 `uc 1 nADDRESS 1 0 :1:5 
 ]
-[s S203 . 1 `uc 1 . 1 0 :2:0 
+[s S204 . 1 `uc 1 . 1 0 :2:0 
 `uc 1 R_W 1 0 :1:2 
 `uc 1 . 1 0 :2:3 
 `uc 1 D_A 1 0 :1:5 
 ]
-[s S208 . 1 `uc 1 . 1 0 :2:0 
+[s S209 . 1 `uc 1 . 1 0 :2:0 
 `uc 1 READ_WRITE 1 0 :1:2 
 `uc 1 . 1 0 :2:3 
 `uc 1 DATA_ADDRESS 1 0 :1:5 
 ]
-[u S213 . 1 `S173 1 . 1 0 `S182 1 . 1 0 `S187 1 . 1 0 `S193 1 . 1 0 `S198 1 . 1 0 `S203 1 . 1 0 `S208 1 . 1 0 ]
-[v _SSPSTATbits SSPSTATbits `VES213  1 e 1 @148 ]
+[u S214 . 1 `S174 1 . 1 0 `S183 1 . 1 0 `S188 1 . 1 0 `S194 1 . 1 0 `S199 1 . 1 0 `S204 1 . 1 0 `S209 1 . 1 0 ]
+[v _SSPSTATbits SSPSTATbits `VES214  1 e 1 @148 ]
 "3387
 [v _ANSEL ANSEL `VEuc  1 e 1 @392 ]
 "3449
@@ -162,8 +164,6 @@ SPI_ACTIVE_2_IDLE 64
 [v _TRISC5 TRISC5 `VEb  1 e 0 @1085 ]
 "40 C:\Users\camil\Desktop\UVG\2021\Electrónica Digital 2\MiniProyecto1_Cams\MiniProyecto1_Cams\Master.X\mainm.c
 [v _POT POT `uc  1 e 1 0 ]
-"41
-[v _CONT CONT `uc  1 e 1 0 ]
 "42
 [v _THERM THERM `uc  1 e 1 0 ]
 "58
@@ -208,7 +208,7 @@ SPI_ACTIVE_2_IDLE 64
 "111 C:\Users\camil\Desktop\UVG\2021\Electrónica Digital 2\MiniProyecto1_Cams\MiniProyecto1_Cams\Master.X\mainm.c
 [v _setup setup `(v  1 e 1 0 ]
 {
-"123
+"124
 } 0
 "12 C:\Users\camil\Desktop\UVG\2021\Electrónica Digital 2\MiniProyecto1_Cams\MiniProyecto1_Cams\Master.X\SPI.c
 [v _spiInit spiInit `(v  1 e 1 0 ]

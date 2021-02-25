@@ -85,7 +85,7 @@ void slave_2(void) {
     __delay_ms(1);
 
     spiWrite(1);
-    CONT = spiRead();
+    PORTB = spiRead();
 
     __delay_ms(1);
     PORTCbits.RC1 = 1; //Slave Deselect 
@@ -111,6 +111,7 @@ void slave_3(void) {
 void setup(void){
     ANSEL = 0;
     ANSELH = 0;
+    TRISC = 0;
     TRISCbits.TRISC4 = 1;
     TRISB = 0;
     TRISD = 0;
