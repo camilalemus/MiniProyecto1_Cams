@@ -2643,7 +2643,44 @@ typedef int16_t intptr_t;
 
 typedef uint16_t uintptr_t;
 # 32 "mains2.c" 2
-# 44 "mains2.c"
+
+# 1 "./SPI.h" 1
+# 17 "./SPI.h"
+typedef enum
+{
+    SPI_MASTER_OSC_DIV4 = 0b00100000,
+    SPI_MASTER_OSC_DIV16 = 0b00100001,
+    SPI_MASTER_OSC_DIV64 = 0b00100010,
+    SPI_MASTER_TMR2 = 0b00100011,
+    SPI_SLAVE_SS_EN = 0b00100100,
+    SPI_SLAVE_SS_DIS = 0b00100101
+}Spi_Type;
+
+typedef enum
+{
+    SPI_DATA_SAMPLE_MIDDLE = 0b00000000,
+    SPI_DATA_SAMPLE_END = 0b10000000
+}Spi_Data_Sample;
+
+typedef enum
+{
+    SPI_CLOCK_IDLE_HIGH = 0b00010000,
+    SPI_CLOCK_IDLE_LOW = 0b00000000
+}Spi_Clock_Idle;
+
+typedef enum
+{
+    SPI_IDLE_2_ACTIVE = 0b00000000,
+    SPI_ACTIVE_2_IDLE = 0b01000000
+}Spi_Transmit_Edge;
+
+
+void spiInit(Spi_Type, Spi_Data_Sample, Spi_Clock_Idle, Spi_Transmit_Edge);
+void spiWrite(char);
+unsigned spiDataReady();
+char spiRead();
+# 33 "mains2.c" 2
+# 45 "mains2.c"
 void setup(void);
 
 
@@ -2667,10 +2704,11 @@ void setup(){
     ANSELbits.ANS2 = 1;
 
     INTCONbits.GIE = 1;
-    TMR0 = 0;
     TRISA = 0;
     TRISAbits.TRISA2 = 1;
+    TRISAbits.TRISA5 = 1;
     TRISC = 0;
+    TRISCbits.TRISC4 = 1;
     TRISD = 0;
     TRISB = 0;
     PORTC = 0;
@@ -2686,8 +2724,10 @@ void setup(){
     PIR1bits.ADIF = 0;
     PIE1bits.ADIE = 1;
     ADCON0bits.ADON = 1;
+
+    spiInit(SPI_SLAVE_SS_EN, SPI_DATA_SAMPLE_MIDDLE, SPI_CLOCK_IDLE_LOW, SPI_IDLE_2_ACTIVE);
 }
-# 96 "mains2.c"
+# 100 "mains2.c"
 void __attribute__((picinterrupt(("")))) isr(void) {
     if (INTCONbits.RBIF == 1) {
         if (PORTBbits.RB0 == 1) {

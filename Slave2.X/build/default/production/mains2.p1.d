@@ -1,2 +1,3 @@
 build/default/production/mains2.p1:  \
-mains2.c 
+mains2.c  \
+SPI.h 

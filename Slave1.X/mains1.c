@@ -81,7 +81,9 @@ void setup(){
     TMR0 = 0;                       //Set Timer0 start point
     TRISA = 0;
     TRISAbits.TRISA0 = 1;
+    TRISAbits.TRISA5 = 1;           //Select bit
     TRISC = 0;                      //Port C and B are outputs
+    TRISCbits.TRISC4 = 1;           //Input of slave SDI
     TRISD = 0;
     TRISB = 0;
     PORTC = 0;                      // Turn off display and LEDs
@@ -97,6 +99,8 @@ void setup(){
     PIR1bits.ADIF = 0; //ADC interrupt flag cleared
     PIE1bits.ADIE = 1; //ADC interrupt enable ON
     ADCON0bits.ADON = 1; //ADC Enable bit
+    
+    spiInit(SPI_SLAVE_SS_EN, SPI_DATA_SAMPLE_MIDDLE, SPI_CLOCK_IDLE_LOW, SPI_IDLE_2_ACTIVE);
 }
 
 //******************************************************************************

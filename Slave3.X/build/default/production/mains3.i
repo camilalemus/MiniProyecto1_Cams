@@ -2707,6 +2707,7 @@ void main(void) {
     setup();
     ADC_init(1, 0, 0, 4);
 
+
     ADC_cflag = 1;
     while (1) {
 
@@ -2730,10 +2731,11 @@ void setup(){
     ANSELbits.ANS0 = 1;
 
     INTCONbits.GIE = 1;
-    TMR0 = 0;
     TRISA = 0;
     TRISAbits.TRISA0 = 1;
+    TRISAbits.TRISA5 = 1;
     TRISC = 0;
+    TRISCbits.TRISC4 = 1;
     TRISD = 0;
     TRISB = 0;
     PORTC = 0;
@@ -2742,6 +2744,8 @@ void setup(){
     PIR1bits.ADIF = 0;
     PIE1bits.ADIE = 1;
     ADCON0bits.ADON = 1;
+
+    spiInit(SPI_SLAVE_SS_EN, SPI_DATA_SAMPLE_MIDDLE, SPI_CLOCK_IDLE_LOW, SPI_IDLE_2_ACTIVE);
 }
 
 

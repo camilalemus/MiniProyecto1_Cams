@@ -60,6 +60,7 @@ void thermometer(void);
 void main(void) {
     setup();
     ADC_init(1, 0, 0, 4);
+    
     //    ADCON0bits.GO = 1;
     ADC_cflag = 1;
     while (1) {
@@ -84,18 +85,21 @@ void setup(){
     ANSELbits.ANS0 = 1;
     
     INTCONbits.GIE = 1;             //Set Global interrupts enable
-    TMR0 = 0;                       //Set Timer0 start point
     TRISA = 0;
     TRISAbits.TRISA0 = 1;
+    TRISAbits.TRISA5 = 1;
     TRISC = 0;                      //Port C and B are outputs
+    TRISCbits.TRISC4 = 1;
     TRISD = 0;
     TRISB = 0;
     PORTC = 0;                      // Turn off display and LEDs
     PORTD = 0;
     INTCONbits.PEIE = 1;            //Periferal Enable
-    PIR1bits.ADIF = 0; //ADC interrupt flag cleared
-    PIE1bits.ADIE = 1; //ADC interrupt enable ON
-    ADCON0bits.ADON = 1; //ADC Enable bit
+    PIR1bits.ADIF = 0;              //ADC interrupt flag cleared
+    PIE1bits.ADIE = 1;              //ADC interrupt enable ON
+    ADCON0bits.ADON = 1;            //ADC Enable bit
+    
+    spiInit(SPI_SLAVE_SS_EN, SPI_DATA_SAMPLE_MIDDLE, SPI_CLOCK_IDLE_LOW, SPI_IDLE_2_ACTIVE);
 }
 
 //******************************************************************************
