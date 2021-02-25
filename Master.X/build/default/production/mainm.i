@@ -2699,6 +2699,18 @@ uint8_t CONT;
 uint8_t THERM;
 
 
+uint16_t adc_temp;
+uint8_t unitV;
+uint8_t decV;
+uint8_t hunV;
+
+
+uint16_t cont_temp;
+uint8_t unitC;
+uint8_t decC;
+uint8_t hunC;
+
+
 
 
 
@@ -2707,6 +2719,8 @@ void slave_1(void);
 void slave_2(void);
 void slave_3(void);
 void screen(void);
+void ss1_screen(void);
+void ss2_screen(void);
 
 
 
@@ -2722,6 +2736,8 @@ void main(void) {
         slave_1();
         slave_2();
         slave_3();
+        ss1_screen();
+        ss2_screen();
     }
     return;
 }
@@ -2746,7 +2762,7 @@ void slave_2(void) {
     _delay((unsigned long)((1)*((8000000)/4000.0)));
 
     spiWrite(1);
-    PORTB = spiRead();
+    CONT = spiRead();
 
     _delay((unsigned long)((1)*((8000000)/4000.0)));
     PORTCbits.RC1 = 1;
@@ -2758,7 +2774,7 @@ void slave_3(void) {
     _delay((unsigned long)((1)*((8000000)/4000.0)));
 
     spiWrite(1);
-    THERM = spiRead();
+    PORTB = spiRead();
 
     _delay((unsigned long)((1)*((8000000)/4000.0)));
     PORTCbits.RC2 = 1;
@@ -2772,6 +2788,47 @@ void screen(void){
         Lcd_Write_String ("S2: ");
         Lcd_Set_Cursor(1, 14);
         Lcd_Write_String ("S3: ");
+}
+
+void ss1_screen(){
+
+    adc_temp = POT * 2;
+    unitV = adc_temp/100;
+    adc_temp = adc_temp - unitV*100;
+    decV = adc_temp / 10;
+    adc_temp = adc_temp - decV*10;
+    hunV = adc_temp;
+
+    unitV = unitV + 48;
+    decV = decV + 48;
+    hunV = hunV + 48;
+
+    Lcd_Set_Cursor(2,1);
+    Lcd_Write_Char (unitV);
+    Lcd_Set_Cursor(2,2);
+    Lcd_Write_Char (decV);
+    Lcd_Set_Cursor(2,3);
+    Lcd_Write_Char (hunV);
+}
+
+void ss2_screen(){
+    cont_temp = CONT;
+    unitC = cont_temp/100;
+    cont_temp = cont_temp - unitC*100;
+    decC = cont_temp / 10;
+    cont_temp = cont_temp - decC*10;
+    hunC = cont_temp;
+
+    unitC = unitC + 48;
+    decC = decC + 48;
+    hunC = hunC + 48;
+
+    Lcd_Set_Cursor(2,7);
+    Lcd_Write_Char (unitC);
+    Lcd_Set_Cursor(2,8);
+    Lcd_Write_Char (decC);
+    Lcd_Set_Cursor(2,9);
+    Lcd_Write_Char (hunC);
 }
 
 

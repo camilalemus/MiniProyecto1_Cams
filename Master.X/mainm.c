@@ -42,6 +42,18 @@ uint8_t POT;
 uint8_t CONT;
 uint8_t THERM;
 
+//Las uso para desplegar el valor del Slave2 en la LCD
+uint16_t adc_temp;
+uint8_t unitV;
+uint8_t decV;
+uint8_t hunV;
+
+//Las uso para desplegar el valor del Slave3 en la LCD
+uint16_t cont_temp;
+uint8_t unitC;
+uint8_t decC;
+uint8_t hunC;
+
 //******************************************************************************
 //                           INSTANCIAR FUNCIONES
 //******************************************************************************
@@ -51,6 +63,8 @@ void slave_1(void);
 void slave_2(void);
 void slave_3(void);
 void screen(void);
+void ss1_screen(void);
+void ss2_screen(void);
 
 
 //******************************************************************************
@@ -66,6 +80,8 @@ void main(void) {
         slave_1();
         slave_2();
         slave_3();
+        ss1_screen();
+        ss2_screen();
     }
     return;
 }
@@ -90,7 +106,7 @@ void slave_2(void) {
     __delay_ms(1);
 
     spiWrite(1);
-    PORTB = spiRead();
+    CONT = spiRead();
 
     __delay_ms(1);
     PORTCbits.RC1 = 1; //Slave Deselect 
@@ -102,7 +118,7 @@ void slave_3(void) {
     __delay_ms(1);
 
     spiWrite(1);
-    THERM = spiRead();
+    PORTB = spiRead();
 
     __delay_ms(1);
     PORTCbits.RC2 = 1; //Slave Deselect 
@@ -116,6 +132,47 @@ void screen(void){
         Lcd_Write_String ("S2: ");
         Lcd_Set_Cursor(1, 14);
         Lcd_Write_String ("S3: ");
+}
+
+void ss1_screen(){
+                                    //   5.0V/255 = 0.02 V --> Bits to volt
+    adc_temp = POT * 2;             //Voltage factor without decimals
+    unitV = adc_temp/100;           //Unit value trunked
+    adc_temp = adc_temp - unitV*100;   //Accumulate the rest numbers
+    decV = adc_temp / 10;           //Tenth value
+    adc_temp = adc_temp - decV*10;  
+    hunV = adc_temp;                //Hundredth value
+    
+    unitV = unitV + 48;         //Numbers to ASCII
+    decV = decV + 48;
+    hunV = hunV + 48;
+    
+    Lcd_Set_Cursor(2,1);        //Set cursor on file 2, position 1
+    Lcd_Write_Char (unitV);  //Write the text
+    Lcd_Set_Cursor(2,2);        //Set cursor on file 2, position 2
+    Lcd_Write_Char (decV);  //Write the text
+    Lcd_Set_Cursor(2,3);        //Set cursor on file 2, position 3
+    Lcd_Write_Char (hunV);  //Write the text
+}
+
+void ss2_screen(){
+    cont_temp = CONT;               //Cont value
+    unitC = cont_temp/100;           //Unit value trunked
+    cont_temp = cont_temp - unitC*100;   //Accumulate the rest numbers
+    decC = cont_temp / 10;           //Tenth value
+    cont_temp = cont_temp - decC*10;  
+    hunC = cont_temp;                //Hundredth value
+    
+    unitC = unitC + 48;         //Numbers to ASCII
+    decC = decC + 48;
+    hunC = hunC + 48;
+    
+    Lcd_Set_Cursor(2,7);        //Set cursor on file 2, position 7
+    Lcd_Write_Char (unitC);  //Write the text
+    Lcd_Set_Cursor(2,8);        //Set cursor on file 2, position 8
+    Lcd_Write_Char (decC);  //Write the text
+    Lcd_Set_Cursor(2,9);        //Set cursor on file 2, position 9
+    Lcd_Write_Char (hunC);  //Write the text
 }
 
 //******************************************************************************

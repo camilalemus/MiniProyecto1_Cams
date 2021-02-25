@@ -3,7 +3,7 @@
 [d edition pro ]
 [d chip 16F887 ]
 [d frameptr 0 ]
-"138 C:\Users\camil\Desktop\UVG\2021\Electrónica Digital 2\MiniProyecto1_Cams\MiniProyecto1_Cams\Master.X\mainm.c
+"195 C:\Users\camil\Desktop\UVG\2021\Electrónica Digital 2\MiniProyecto1_Cams\MiniProyecto1_Cams\Master.X\mainm.c
 [e E1292 . `uc
 SPI_MASTER_OSC_DIV4 32
 SPI_MASTER_OSC_DIV16 33
@@ -45,8 +45,12 @@ SPI_CLOCK_IDLE_LOW 0
 SPI_IDLE_2_ACTIVE 0
 SPI_ACTIVE_2_IDLE 64
 ]
+"5 C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\lwdiv.c
+[v ___lwdiv __lwdiv `(ui  1 e 2 0 ]
 "10 C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\sprcadd.c
 [v ___fladd __fladd `(d  1 e 4 0 ]
+"15 C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\Umul16.c
+[v ___wmul __wmul `(ui  1 e 2 0 ]
 "4 C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\Umul8_16.c
 [v __Umul8_16 _Umul8_16 `(ui  1 e 2 0 ]
 "6 C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\pic\__eeprom.c
@@ -67,17 +71,21 @@ SPI_ACTIVE_2_IDLE 64
 [v _Lcd_Write_Char Lcd_Write_Char `(v  1 e 1 0 ]
 "71
 [v _Lcd_Write_String Lcd_Write_String `(v  1 e 1 0 ]
-"60 C:\Users\camil\Desktop\UVG\2021\Electrónica Digital 2\MiniProyecto1_Cams\MiniProyecto1_Cams\Master.X\mainm.c
+"74 C:\Users\camil\Desktop\UVG\2021\Electrónica Digital 2\MiniProyecto1_Cams\MiniProyecto1_Cams\Master.X\mainm.c
 [v _main main `(v  1 e 1 0 ]
-"77
+"93
 [v _slave_1 slave_1 `(v  1 e 1 0 ]
-"88
+"104
 [v _slave_2 slave_2 `(v  1 e 1 0 ]
-"100
+"116
 [v _slave_3 slave_3 `(v  1 e 1 0 ]
-"112
+"128
 [v _screen screen `(v  1 e 1 0 ]
-"125
+"137
+[v _ss1_screen ss1_screen `(v  1 e 1 0 ]
+"158
+[v _ss2_screen ss2_screen `(v  1 e 1 0 ]
+"182
 [v _setup setup `(v  1 e 1 0 ]
 "12 C:\Users\camil\Desktop\UVG\2021\Electrónica Digital 2\MiniProyecto1_Cams\MiniProyecto1_Cams\Master.X\SPI.c
 [v _spiInit spiInit `(v  1 e 1 0 ]
@@ -89,7 +97,7 @@ SPI_ACTIVE_2_IDLE 64
 [v _spiRead spiRead `(uc  1 e 1 0 ]
 "228 C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f887.h
 [v _PORTB PORTB `VEuc  1 e 1 @6 ]
-[s S50 . 1 `uc 1 RC0 1 0 :1:0 
+[s S58 . 1 `uc 1 RC0 1 0 :1:0 
 `uc 1 RC1 1 0 :1:1 
 `uc 1 RC2 1 0 :1:2 
 `uc 1 RC3 1 0 :1:3 
@@ -99,8 +107,8 @@ SPI_ACTIVE_2_IDLE 64
 `uc 1 RC7 1 0 :1:7 
 ]
 "307
-[u S59 . 1 `S50 1 . 1 0 ]
-[v _PORTCbits PORTCbits `VES59  1 e 1 @7 ]
+[u S67 . 1 `S58 1 . 1 0 ]
+[v _PORTCbits PORTCbits `VES67  1 e 1 @7 ]
 "352
 [v _PORTD PORTD `VEuc  1 e 1 @8 ]
 "843
@@ -111,7 +119,7 @@ SPI_ACTIVE_2_IDLE 64
 [v _TRISB TRISB `VEuc  1 e 1 @134 ]
 "1540
 [v _TRISC TRISC `VEuc  1 e 1 @135 ]
-[s S101 . 1 `uc 1 TRISC0 1 0 :1:0 
+[s S114 . 1 `uc 1 TRISC0 1 0 :1:0 
 `uc 1 TRISC1 1 0 :1:1 
 `uc 1 TRISC2 1 0 :1:2 
 `uc 1 TRISC3 1 0 :1:3 
@@ -121,15 +129,15 @@ SPI_ACTIVE_2_IDLE 64
 `uc 1 TRISC7 1 0 :1:7 
 ]
 "1557
-[u S110 . 1 `S101 1 . 1 0 ]
-[v _TRISCbits TRISCbits `VES110  1 e 1 @135 ]
+[u S123 . 1 `S114 1 . 1 0 ]
+[v _TRISCbits TRISCbits `VES123  1 e 1 @135 ]
 "1602
 [v _TRISD TRISD `VEuc  1 e 1 @136 ]
 "1664
 [v _TRISE TRISE `VEuc  1 e 1 @137 ]
 "2177
 [v _SSPSTAT SSPSTAT `VEuc  1 e 1 @148 ]
-[s S202 . 1 `uc 1 BF 1 0 :1:0 
+[s S225 . 1 `uc 1 BF 1 0 :1:0 
 `uc 1 UA 1 0 :1:1 
 `uc 1 R_nW 1 0 :1:2 
 `uc 1 S 1 0 :1:3 
@@ -139,39 +147,39 @@ SPI_ACTIVE_2_IDLE 64
 `uc 1 SMP 1 0 :1:7 
 ]
 "2231
-[s S211 . 1 `uc 1 . 1 0 :2:0 
+[s S234 . 1 `uc 1 . 1 0 :2:0 
 `uc 1 R 1 0 :1:2 
 `uc 1 . 1 0 :2:3 
 `uc 1 D 1 0 :1:5 
 ]
-[s S216 . 1 `uc 1 . 1 0 :2:0 
+[s S239 . 1 `uc 1 . 1 0 :2:0 
 `uc 1 I2C_READ 1 0 :1:2 
 `uc 1 I2C_START 1 0 :1:3 
 `uc 1 I2C_STOP 1 0 :1:4 
 `uc 1 I2C_DATA 1 0 :1:5 
 ]
-[s S222 . 1 `uc 1 . 1 0 :2:0 
+[s S245 . 1 `uc 1 . 1 0 :2:0 
 `uc 1 nW 1 0 :1:2 
 `uc 1 . 1 0 :2:3 
 `uc 1 nA 1 0 :1:5 
 ]
-[s S227 . 1 `uc 1 . 1 0 :2:0 
+[s S250 . 1 `uc 1 . 1 0 :2:0 
 `uc 1 nWRITE 1 0 :1:2 
 `uc 1 . 1 0 :2:3 
 `uc 1 nADDRESS 1 0 :1:5 
 ]
-[s S232 . 1 `uc 1 . 1 0 :2:0 
+[s S255 . 1 `uc 1 . 1 0 :2:0 
 `uc 1 R_W 1 0 :1:2 
 `uc 1 . 1 0 :2:3 
 `uc 1 D_A 1 0 :1:5 
 ]
-[s S237 . 1 `uc 1 . 1 0 :2:0 
+[s S260 . 1 `uc 1 . 1 0 :2:0 
 `uc 1 READ_WRITE 1 0 :1:2 
 `uc 1 . 1 0 :2:3 
 `uc 1 DATA_ADDRESS 1 0 :1:5 
 ]
-[u S242 . 1 `S202 1 . 1 0 `S211 1 . 1 0 `S216 1 . 1 0 `S222 1 . 1 0 `S227 1 . 1 0 `S232 1 . 1 0 `S237 1 . 1 0 ]
-[v _SSPSTATbits SSPSTATbits `VES242  1 e 1 @148 ]
+[u S265 . 1 `S225 1 . 1 0 `S234 1 . 1 0 `S239 1 . 1 0 `S245 1 . 1 0 `S250 1 . 1 0 `S255 1 . 1 0 `S260 1 . 1 0 ]
+[v _SSPSTATbits SSPSTATbits `VES265  1 e 1 @148 ]
 "3387
 [v _ANSEL ANSEL `VEuc  1 e 1 @392 ]
 "3449
@@ -186,27 +194,75 @@ SPI_ACTIVE_2_IDLE 64
 [v _TRISC5 TRISC5 `VEb  1 e 0 @1085 ]
 "41 C:\Users\camil\Desktop\UVG\2021\Electrónica Digital 2\MiniProyecto1_Cams\MiniProyecto1_Cams\Master.X\mainm.c
 [v _POT POT `uc  1 e 1 0 ]
-"43
-[v _THERM THERM `uc  1 e 1 0 ]
-"60
+"42
+[v _CONT CONT `uc  1 e 1 0 ]
+"46
+[v _adc_temp adc_temp `ui  1 e 2 0 ]
+"47
+[v _unitV unitV `uc  1 e 1 0 ]
+"48
+[v _decV decV `uc  1 e 1 0 ]
+"49
+[v _hunV hunV `uc  1 e 1 0 ]
+"52
+[v _cont_temp cont_temp `ui  1 e 2 0 ]
+"53
+[v _unitC unitC `uc  1 e 1 0 ]
+"54
+[v _decC decC `uc  1 e 1 0 ]
+"55
+[v _hunC hunC `uc  1 e 1 0 ]
+"74
 [v _main main `(v  1 e 1 0 ]
 {
-"71
+"87
 } 0
-"100
+"158
+[v _ss2_screen ss2_screen `(v  1 e 1 0 ]
+{
+"176
+} 0
+"137
+[v _ss1_screen ss1_screen `(v  1 e 1 0 ]
+{
+"156
+} 0
+"15 C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\Umul16.c
+[v ___wmul __wmul `(ui  1 e 2 0 ]
+{
+"17
+[v ___wmul@product product `ui  1 a 2 4 ]
+"15
+[v ___wmul@multiplier multiplier `ui  1 p 2 0 ]
+[v ___wmul@multiplicand multiplicand `ui  1 p 2 2 ]
+"53
+} 0
+"5 C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\lwdiv.c
+[v ___lwdiv __lwdiv `(ui  1 e 2 0 ]
+{
+"10
+[v ___lwdiv@quotient quotient `ui  1 a 2 5 ]
+"11
+[v ___lwdiv@counter counter `uc  1 a 1 7 ]
+"5
+[v ___lwdiv@divisor divisor `ui  1 p 2 0 ]
+[v ___lwdiv@dividend dividend `ui  1 p 2 2 ]
+"30
+} 0
+"116 C:\Users\camil\Desktop\UVG\2021\Electrónica Digital 2\MiniProyecto1_Cams\MiniProyecto1_Cams\Master.X\mainm.c
 [v _slave_3 slave_3 `(v  1 e 1 0 ]
 {
-"110
+"126
 } 0
-"88
+"104
 [v _slave_2 slave_2 `(v  1 e 1 0 ]
 {
-"98
+"114
 } 0
-"77
+"93
 [v _slave_1 slave_1 `(v  1 e 1 0 ]
 {
-"86
+"102
 } 0
 "34 C:\Users\camil\Desktop\UVG\2021\Electrónica Digital 2\MiniProyecto1_Cams\MiniProyecto1_Cams\Master.X\SPI.c
 [v _spiWrite spiWrite `(v  1 e 1 0 ]
@@ -227,10 +283,10 @@ SPI_ACTIVE_2_IDLE 64
 {
 "32
 } 0
-"125 C:\Users\camil\Desktop\UVG\2021\Electrónica Digital 2\MiniProyecto1_Cams\MiniProyecto1_Cams\Master.X\mainm.c
+"182 C:\Users\camil\Desktop\UVG\2021\Electrónica Digital 2\MiniProyecto1_Cams\MiniProyecto1_Cams\Master.X\mainm.c
 [v _setup setup `(v  1 e 1 0 ]
 {
-"139
+"196
 } 0
 "12 C:\Users\camil\Desktop\UVG\2021\Electrónica Digital 2\MiniProyecto1_Cams\MiniProyecto1_Cams\Master.X\SPI.c
 [v _spiInit spiInit `(v  1 e 1 0 ]
@@ -244,10 +300,10 @@ SPI_ACTIVE_2_IDLE 64
 [v spiInit@sType sType `E1264  1 a 1 3 ]
 "27
 } 0
-"112 C:\Users\camil\Desktop\UVG\2021\Electrónica Digital 2\MiniProyecto1_Cams\MiniProyecto1_Cams\Master.X\mainm.c
+"128 C:\Users\camil\Desktop\UVG\2021\Electrónica Digital 2\MiniProyecto1_Cams\MiniProyecto1_Cams\Master.X\mainm.c
 [v _screen screen `(v  1 e 1 0 ]
 {
-"119
+"135
 } 0
 "71 C:\Users\camil\Desktop\UVG\2021\Electrónica Digital 2\MiniProyecto1_Cams\MiniProyecto1_Cams\Master.X\lcd.c
 [v _Lcd_Write_String Lcd_Write_String `(v  1 e 1 0 ]
