@@ -36,6 +36,7 @@
 #include <xc.h>
 #include <stdint.h>
 #include "SPI.h"
+#include "lcd.h"
 
 uint8_t POT;
 uint8_t CONT;
@@ -49,6 +50,7 @@ void setup(void);
 void slave_1(void);
 void slave_2(void);
 void slave_3(void);
+void screen(void);
 
 
 //******************************************************************************
@@ -57,7 +59,10 @@ void slave_3(void);
 
 void main(void) {
     setup();
+    Lcd_Init();
+    Lcd_Clear();
     while (1){
+        screen();
         slave_1();
         slave_2();
         slave_3();
@@ -104,6 +109,15 @@ void slave_3(void) {
 
 }
 
+void screen(void){
+        Lcd_Set_Cursor(1,1);        //Set cursor on file 1, position 1
+        Lcd_Write_String ("S1: ");  //Write the text
+        Lcd_Set_Cursor(1, 7);
+        Lcd_Write_String ("S2: ");
+        Lcd_Set_Cursor(1, 14);
+        Lcd_Write_String ("S3: ");
+}
+
 //******************************************************************************
 //                                  SETUP
 //******************************************************************************
@@ -115,6 +129,7 @@ void setup(void){
     TRISCbits.TRISC4 = 1;
     TRISB = 0;
     TRISD = 0;
+    TRISE = 0;
     PORTB = 0;
     PORTD = 0;
     PORTCbits.RC0 = 1;
