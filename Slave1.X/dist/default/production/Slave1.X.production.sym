@@ -172,7 +172,7 @@ cstackCOMMON 70 79 COMMON 70 1
 cstackBANK0 20 22 BANK0 20 1
 %locals
 dist/default/production\Slave1.X.production.o
-C:\Users\camil\AppData\Local\Temp\shck.s
+C:\Users\camil\AppData\Local\Temp\sb60.s
 800 F 0 CODE 0
 803 F 0 CODE 0
 817 F 0 CODE 0

@@ -28,11 +28,96 @@
 // #pragma config statements should precede project file includes.
 // Use project enums instead of #define for ON and OFF.
 
+//******************************************************************************
+//                                  VARIABLES
+//******************************************************************************
+#define _XTAL_FREQ (8000000)
 
 #include <xc.h>
-#include "SPI.h"
+#include <stdint.h>
 #include "SPI.h"
 
+uint8_t POT;
+uint8_t CONT;
+uint8_t THERM;
+
+//******************************************************************************
+//                           INSTANCIAR FUNCIONES
+//******************************************************************************
+
+void setup(void);
+void slave_1(void);
+void slave_2(void);
+void slave_3(void);
+
+
+//******************************************************************************
+//                            CICLO PRINCIPAL
+//******************************************************************************
+
 void main(void) {
+    setup();
+    while (1){
+        slave_1();
+        slave_2();
+        slave_3();
+    }
     return;
+}
+
+//******************************************************************************
+//                               FUNCIONES
+//******************************************************************************
+
+void slave_1(void) {
+    PORTCbits.RC0 = 0; //Slave Select ADC
+    __delay_ms(1);
+
+    spiWrite(1);
+    POT = spiRead();
+
+    __delay_ms(1);
+    PORTCbits.RC0 = 1; //Slave Deselect 
+}
+
+void slave_2(void) {
+    PORTCbits.RC1 = 0; //Slave Select Counter
+    __delay_ms(1);
+
+    spiWrite(1);
+    CONT = spiRead();
+
+    __delay_ms(1);
+    PORTCbits.RC1 = 1; //Slave Deselect 
+
+}
+
+void slave_3(void) {
+    PORTCbits.RC2 = 0; //Slave Select Thermometer
+    __delay_ms(1);
+
+    spiWrite(1);
+    THERM = spiRead();
+
+    __delay_ms(1);
+    PORTCbits.RC2 = 1; //Slave Deselect 
+
+}
+
+//******************************************************************************
+//                                  SETUP
+//******************************************************************************
+
+void setup(void){
+    ANSEL = 0;
+    ANSELH = 0;
+    TRISCbits.TRISC4 = 1;
+    TRISB = 0;
+    TRISD = 0;
+    PORTB = 0;
+    PORTD = 0;
+    PORTCbits.RC0 = 1;
+    PORTCbits.RC1 = 1;
+    PORTCbits.RC2 = 1;
+    spiInit(SPI_MASTER_OSC_DIV4, SPI_DATA_SAMPLE_MIDDLE, SPI_CLOCK_IDLE_LOW, SPI_IDLE_2_ACTIVE);
 }
